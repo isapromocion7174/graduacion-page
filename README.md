@@ -1,7 +1,16 @@
 # Astro Starter Kit: Basics
 
+
+## Instalar dependencias de desarrollo.
 ```sh
-npm create astro@latest -- --template basics
+npm i
+```
+
+
+## Inicializar proyecto como dev
+
+```sh
+npm run dev
 ```
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
