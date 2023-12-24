@@ -1,10 +1,12 @@
 ---
-import Navbar from '@/components/Navbar.astro'
+import {NavbarWithMegaMenu} from '@/components/Navbar'
 interface Props {
 	title: string;
 }
+
 const { title } = Astro.props;
 ---
+
 <!doctype html>
 <html lang="es">
 	<head>
@@ -17,7 +19,7 @@ const { title } = Astro.props;
 	</head>
 	<body>
         <main>
-            <Navbar  />
+            <NavbarWithMegaMenu client:load  />
             <slot />
         </main>
 	</body>
