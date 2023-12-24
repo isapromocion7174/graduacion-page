@@ -10,7 +10,7 @@ interface Props {
 }
 
 const { name, path, dropDown, dropDownOptions } = Astro.props
-const id = `dropdownNavbar ${name}`
+const id = `dropdownNavbar ${name} ${crypto.randomUUID()}`
 ---
 
 
