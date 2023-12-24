@@ -1,13 +1,24 @@
 ---
-import Navbar from '../components/Navbar.astro';
-import Carousel from '../components/Carousel.astro';
-
+import Layout from '@/layouts/Layout.astro';
+import { CarouselWithContent} from '@/components/Carrousel';
 ---
 
-
-
-<Navbar/>
+<Layout title='Home'>
+	<main>
+		<CarouselWithContent client:load />
+	</main>
+</Layout>
 <!-- <Carousel/> -->
 
 
+<style>
+	main {
+		flex: 1;
+		height: 50%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+</style>
 
