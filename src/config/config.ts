@@ -1,6 +1,23 @@
-export const navbarOptions = [
+export type dropDownOption = {
+    name: string;
+    path: string;
+};
+
+export type NavbarOption = {
+    name: string;
+    path: string;
+    dropDown: boolean;
+    dropDownOptions?: dropDownOption[];
+};
+
+export const navbarOptions: NavbarOption[] = [
     {
         name: "Inicio",
+        path: "/",
+        dropDown: false,
+    },
+    {
+        name: "ISA",
         path: "/",
         dropDown: true,
         dropDownOptions: [
@@ -23,6 +40,38 @@ export const navbarOptions = [
             {
                 name: "Un dia tipico en ISA",
                 path: "/dia-tipico",
+            },
+        ],
+    },
+
+    {
+        /*
+        Miscelaneos
+
+        Encuentros
+        Anecdotas y Jocosidades
+        Programas de Graduacion
+        Otros
+    */
+        name: "Miscelaneos",
+        path: "/miscelaneos",
+        dropDown: true,
+        dropDownOptions: [
+            {
+                name: "Encuentros",
+                path: "/encuentros",
+            },
+            {
+                name: "Anecdotas y Jocosidades",
+                path: "/anecdotas-jocosidades",
+            },
+            {
+                name: "Programas de Graduacion",
+                path: "/programas-graduacion",
+            },
+            {
+                name: "Otros",
+                path: "/otros",
             },
         ],
     },
@@ -64,37 +113,6 @@ export const navbarOptions = [
             {
                 name: "50th Aniversario",
                 path: "/50th-aniversario",
-            },
-        ],
-    },
-    {
-        /*
-        Miscelaneos
-
-        Encuentros
-        Anecdotas y Jocosidades
-        Programas de Graduacion
-        Otros
-    */
-        name: "Miscelaneos",
-        path: "/miscelaneos",
-        dropDown: true,
-        dropDownOptions: [
-            {
-                name: "Encuentros",
-                path: "/encuentros",
-            },
-            {
-                name: "Anecdotas y Jocosidades",
-                path: "/anecdotas-jocosidades",
-            },
-            {
-                name: "Programas de Graduacion",
-                path: "/programas-graduacion",
-            },
-            {
-                name: "Otros",
-                path: "/otros",
             },
         ],
     },
