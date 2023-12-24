@@ -1,6 +1,4 @@
-import pkg from "@material-tailwind/react";
-
-const { Carousel, Typography, Button } = pkg;
+import { Carousel, Typography, Button } from "@material-tailwind/react";
 
 export function CarouselWithContent() {
     return (

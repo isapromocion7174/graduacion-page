@@ -1,8 +1,5 @@
 import React from "react";
-
-import pkg from "@material-tailwind/react";
-
-const {
+import {
     Navbar,
     Collapse,
     Typography,
@@ -14,7 +11,7 @@ const {
     MenuHandler,
     MenuList,
     MenuItem,
-} = pkg;
+} from "@material-tailwind/react";
 import {
     ChevronDownIcon,
     Bars3Icon,
