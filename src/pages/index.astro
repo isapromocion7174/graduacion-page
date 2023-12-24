@@ -1,22 +1,31 @@
 ---
 import Layout from '@/layouts/Layout.astro';
+import Carousel from '@/components/Carrousel.astro';
 ---
 
 <Layout title='Home'>
-	<main>
+	<main class="bg-blue-950">
+		<div class="
+			max-w-lg
+			w-full
+		">
+			<Carousel />
+		</div>
 	</main>
 </Layout>
-<!-- <Carousel/> -->
 
 
 <style>
 	main {
 		flex: 1;
-		height: 50%;
+		height: 100%;
+		width: 100%;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
 	}
+
+
 </style>
 

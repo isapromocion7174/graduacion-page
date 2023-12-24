@@ -11,4 +11,5 @@ export default {
         extend: {},
     },
     plugins: [flowbite],
+    darkMode: "media", // or 'media' or 'class'
 };
