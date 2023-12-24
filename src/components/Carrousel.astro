@@ -1,143 +1,204 @@
 <div
-                id="indicators-carousel"
-                class="relative w-full"
-                data-carousel="slide"
+    id="indicators-carousel"
+    class="relative w-full h-full max-w-none rounded-none"
+    data-carousel="static"
+>
+    <div class="relative h-full overflow-hidden">
+        <div
+            class="hidden duration-700 ease-in-out bg-black"
+            data-carousel-item="active"
+        >
+            <div
+                class="absolute w-full h-full grid grid-flow-col place-content-center
+                            gap-4
+                            z-20
+                         text-white"
             >
-                <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+                <div
+                    class="max-w-screen-xl
+                            grid-rows-1
+                         grid grid-flow-col place-content-center
+                            grid-cols-2
+                            gap-24
+                            "
+                >
                     <div
-                        class="hidden duration-700 ease-in-out"
-                        data-carousel-item="active"
+                        class="flex
+                         flex-col
+                         justify-center
+                         items-center
+                         space-y-4
+                         h-full
+                         w-full"
                     >
-                        <img
-                            src="https://png.pngtree.com/background/20230516/original/pngtree-path-through-the-forest-wallpaper-picture-image_2615805.jpg"
-                            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                            alt="..."
-                        />
+                    <div
+                        class="flex flex-col 
+                        w-full
+                        space-y-4"
+                    >
+                        <h2
+                            class="text-4xl font-bold text-white"
+                            data-carousel-title
+                        >Bienvenidos al Portal</h2>
+                        <p
+                            class="text-lg text-white"
+                            data-carousel-description
+                        >
+                            Lorem ipsum, dolor sit amet consectetur adipisicing
+                            elit. Reiciendis sed sunt molestiae adipisci cumque
+                            vero quos possimus eum deleniti, laboriosam dolor!
+                            Suscipit in consectetur provident dolore eligendi
+                            sed eum numquam.
+                        </p>
                     </div>
-                    <div
-                        class="hidden duration-700 ease-in-out"
-                        data-carousel-item
-                    >
-                        <img
-                            src="https://png.pngtree.com/background/20230516/original/pngtree-path-through-the-forest-wallpaper-picture-image_2615805.jpg"
-                            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                            alt="..."
-                        />
+                        <a href="">
+                            <button
+                                class="px-4 py-2 bg-white rounded-full text-black 
+                                hover:bg-gray-200 transition
+                                dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700
+                                "
+                            >
+                                Ver mas
+                            </button>
+                        </a>
                     </div>
+
                     <div
-                        class="hidden duration-700 ease-in-out"
-                        data-carousel-item
+                        class="flex
+                                flex-col
+                                justify-center
+                                items-center
+                                space-y-4
+                                text-center
+                                h-full
+                                w-full"
                     >
                         <img
-                            src="https://png.pngtree.com/background/20230516/original/pngtree-path-through-the-forest-wallpaper-picture-image_2615805.jpg"
-                            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                            alt="..."
-                        />
-                    </div>
-                    <div
-                        class="hidden duration-700 ease-in-out"
-                        data-carousel-item
-                    >
-                        <img
-                            src="https://png.pngtree.com/background/20230516/original/pngtree-path-through-the-forest-wallpaper-picture-image_2615805.jpg"
-                            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                            alt="..."
-                        />
-                    </div>
-                    <div
-                        class="hidden duration-700 ease-in-out"
-                        data-carousel-item
-                    >
-                        <img
-                            src="https://png.pngtree.com/background/20230516/original/pngtree-path-through-the-forest-wallpaper-picture-image_2615805.jpg"
-                            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                            alt="..."
+                            class="rounded"
+                            src="https://listindiario.com/files/main_image/uploads/2018/03/26/6433bfdd08a37.jpeg"
+                            alt=""
                         />
                     </div>
                 </div>
-                <div class="absolute z-30 flex -translate-x-1/2 space-x-3 rtl:space-x-reverse bottom-5 left-1/2">
-                    <button
-                        type="button"
-                        class="w-3 h-3 rounded-full"
-                        aria-current="true"
-                        aria-label="Slide 1"
-                        data-carousel-slide-to="0"
-                    ></button>
-                    <button
-                        type="button"
-                        class="w-3 h-3 rounded-full"
-                        aria-current="false"
-                        aria-label="Slide 2"
-                        data-carousel-slide-to="1"
-                    ></button>
-                    <button
-                        type="button"
-                        class="w-3 h-3 rounded-full"
-                        aria-current="false"
-                        aria-label="Slide 3"
-                        data-carousel-slide-to="2"
-                    ></button>
-                    <button
-                        type="button"
-                        class="w-3 h-3 rounded-full"
-                        aria-current="false"
-                        aria-label="Slide 4"
-                        data-carousel-slide-to="3"
-                    ></button>
-                    <button
-                        type="button"
-                        class="w-3 h-3 rounded-full"
-                        aria-current="false"
-                        aria-label="Slide 5"
-                        data-carousel-slide-to="4"
-                    ></button>
-                </div>
-                <button
-                    type="button"
-                    class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-                    data-carousel-prev
-                >
-                    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                        <svg
-                            class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 6 10"
-                        >
-                            <path
-                                stroke="currentColor"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M5 1 1 5l4 4"
-                            />
-                        </svg>
-                        <span class="sr-only">Previous</span>
-                    </span>
-                </button>
-                <button
-                    type="button"
-                    class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-                    data-carousel-next
-                >
-                    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                        <svg
-                            class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 6 10"
-                        >
-                            <path
-                                stroke="currentColor"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="m1 9 4-4-4-4"
-                            />
-                        </svg>
-                        <span class="sr-only">Next</span>
-                    </span>
-                </button>
             </div>
+
+            <img
+                src="https://g6w7v6t9.rocketcdn.me/wp-content/uploads/2019/04/universidad-isa-1.jpg"
+                class="w-full h-full object-cover opacity-30 z-10"
+                alt="..."
+            />
+        </div>
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img
+                src="https://png.pngtree.com/background/20230516/original/pngtree-path-through-the-forest-wallpaper-picture-image_2615805.jpg"
+                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                alt="..."
+            />
+        </div>
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img
+                src="https://png.pngtree.com/background/20230516/original/pngtree-path-through-the-forest-wallpaper-picture-image_2615805.jpg"
+                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                alt="..."
+            />
+        </div>
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img
+                src="https://png.pngtree.com/background/20230516/original/pngtree-path-through-the-forest-wallpaper-picture-image_2615805.jpg"
+                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                alt="..."
+            />
+        </div>
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img
+                src="https://png.pngtree.com/background/20230516/original/pngtree-path-through-the-forest-wallpaper-picture-image_2615805.jpg"
+                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                alt="..."
+            />
+        </div>
+    </div>
+    <div
+        class="absolute z-30 flex -translate-x-1/2 space-x-3 rtl:space-x-reverse bottom-5 left-1/2"
+    >
+        <button
+            type="button"
+            class="w-3 h-3 rounded-full"
+            aria-current="true"
+            aria-label="Slide 1"
+            data-carousel-slide-to="0"></button>
+        <button
+            type="button"
+            class="w-3 h-3 rounded-full"
+            aria-current="false"
+            aria-label="Slide 2"
+            data-carousel-slide-to="1"></button>
+        <button
+            type="button"
+            class="w-3 h-3 rounded-full"
+            aria-current="false"
+            aria-label="Slide 3"
+            data-carousel-slide-to="2"></button>
+        <button
+            type="button"
+            class="w-3 h-3 rounded-full"
+            aria-current="false"
+            aria-label="Slide 4"
+            data-carousel-slide-to="3"></button>
+        <button
+            type="button"
+            class="w-3 h-3 rounded-full"
+            aria-current="false"
+            aria-label="Slide 5"
+            data-carousel-slide-to="4"></button>
+    </div>
+    <button
+        type="button"
+        class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+        data-carousel-prev
+    >
+        <span
+            class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+        >
+            <svg
+                class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 6 10"
+            >
+                <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 1 1 5l4 4"></path>
+            </svg>
+            <span class="sr-only">Previous</span>
+        </span>
+    </button>
+    <button
+        type="button"
+        class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+        data-carousel-next
+    >
+        <span
+            class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+        >
+            <svg
+                class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 6 10"
+            >
+                <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m1 9 4-4-4-4"></path>
+            </svg>
+            <span class="sr-only">Next</span>
+        </span>
+    </button>
+</div>
