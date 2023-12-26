@@ -1,3 +1,5 @@
+
+
 export type dropDownOption = {
     name: string;
     path: string;
@@ -8,9 +10,27 @@ export type NavbarOption = {
     path: string;
     dropDown: boolean;
     dropDownOptions?: dropDownOption[];
-};
+}; 
 
+export type AdminOption = {
+    name: string;
+    path: string;
+  };
+  
+  export type AdminNavbarOption = {
+    name: string;
+    path: string;
+    dropDown: boolean;
+    dropDownOptions?: AdminOption[];
+  };
+  
 export const navbarOptions: NavbarOption[] = [
+
+    {
+        name: "Admin",
+        path: "/admin",
+        dropDown: false,
+    },
     {
         name: "Inicio",
         path: "/",
@@ -115,5 +135,24 @@ export const navbarOptions: NavbarOption[] = [
                 path: "/50th-aniversario",
             },
         ],
-    },
-];
+    }
+    ]
+    export const adminNavbarOptions: AdminNavbarOption[] = [
+        {
+          name: "Admin",
+          path: "/admin",
+          dropDown: true,
+          dropDownOptions: [
+            {
+              name: "Usuarios",
+              path: "/admin/usuarios",
+            },
+            {
+              name: "Eventos",
+              path: "/admin/eventos",
+            },
+
+          ],
+        },
+      ];
+      

@@ -1,6 +1,6 @@
 <div
     id="indicators-carousel"
-    class="relative w-full h-full max-w-none rounded-none"
+    class=" relative w-full h-full max-w-none rounded-none"
     data-carousel="static"
 >
     <div class="relative h-full overflow-hidden">
@@ -8,6 +8,8 @@
             class="hidden duration-700 ease-in-out bg-black"
             data-carousel-item="active"
         >
+
+        
             <div
                 class="absolute w-full h-full grid grid-flow-col place-content-center
                             gap-4
@@ -20,6 +22,7 @@
                          grid grid-flow-col place-content-center
                             grid-cols-2
                             gap-24
+
                             "
                 >
                     <div
@@ -73,11 +76,12 @@
                                 h-full
                                 w-full"
                     >
-                        <img
-                            class="rounded"
-                            src="https://listindiario.com/files/main_image/uploads/2018/03/26/6433bfdd08a37.jpeg"
-                            alt=""
-                        />
+                    <img
+                    class="rounded-xl shadow-lg"
+                    src="https://listindiario.com/files/main_image/uploads/2018/03/26/6433bfdd08a37.jpeg"
+                    alt=""
+                  />
+                  
                     </div>
                 </div>
             </div>
@@ -201,4 +205,18 @@
             <span class="sr-only">Next</span>
         </span>
     </button>
+    <script>
+        
+
+        const nextButton = document.querySelector('[data-carousel-next]');
+
+     
+        const goToNextSlide = () => {
+          const event = new Event('click');
+          nextButton.dispatchEvent(event);
+        };
+      
+        setInterval(goToNextSlide, 5000);
+      </script>
+      
 </div>
