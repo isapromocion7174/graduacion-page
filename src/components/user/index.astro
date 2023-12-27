@@ -1,13 +1,15 @@
 ---
-import Photo from "../user/inputs/inputphoto.astro";
-import Date from "../user/inputs/inputsdate.astro";
-import Number from "../user/inputs/inputsnumber.astro";
-import Text from "../user/inputs/inputstext.astro";
-import Select from "../user/select/select.astro";
-import Celular from "../user/inputs/inputcelular.astro";
+import Photo from "./inputs/inputphoto.astro";
+import Date from "./inputs/inputsdate.astro";
+import Number from "./inputs/inputsnumber.astro";
+import Text from "./inputs/inputstext.astro";
+import Select from "./select/select.astro";
+import Celular from "./inputs/inputcelular.astro";
 ---
 
-<form>
+<form
+  class='p-4 rounded-lg bg-white shadow-md dark:bg-gray-800'
+>
   <div class="grid gap-6 mb-6 md:grid-cols-2">
     <Text />
     <Celular />
@@ -22,3 +24,5 @@ import Celular from "../user/inputs/inputcelular.astro";
     >Guardar</button
   >
 </form>
+
+
