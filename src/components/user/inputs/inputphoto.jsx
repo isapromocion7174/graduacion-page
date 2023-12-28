@@ -69,7 +69,7 @@ const inputphoto = () => {
                         ref={fileInput}
                         onChange={handleFileSelect}
                         type="file"
-                        name="imagen"
+                        name="foto"
                         className="absolute inset-0 opacity-0 cursor-pointer z-10"
                     />
 
