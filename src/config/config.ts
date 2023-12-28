@@ -1,3 +1,8 @@
+import EventoIMG from "@/assets/img/evento.png";
+import AmigosIMG from "@/assets/img/a.jpg";
+import GrupoIMG from "@/assets/img/grupo.jpg";
+import InstitutoIMG from "@/assets/img/universidad-isa-1.jpg";
+
 export type dropDownOption = {
     name: string;
     path: string;
@@ -35,10 +40,6 @@ export const navbarOptions: NavbarOption[] = [
                 path: "/distribucion-habitacion",
             },
             {
-                name: "Origen y titulos acuales",
-                path: "/origen-titulos",
-            },
-            {
                 name: "Un dia tipico en ISA",
                 path: "/dia-tipico",
             },
@@ -54,8 +55,8 @@ export const navbarOptions: NavbarOption[] = [
         Programas de Graduacion
         Otros
     */
-        name: "Miscelaneos",
-        path: "/miscelaneos",
+        name: "Actividades",
+        path: "/actividades",
         dropDown: true,
         dropDownOptions: [
             {
@@ -69,6 +70,14 @@ export const navbarOptions: NavbarOption[] = [
             {
                 name: "Programas de Graduacion",
                 path: "/programas-graduacion",
+            },
+            {
+                name: "Deportivas",
+                path: "/deportivas",
+            },
+            {
+                name: "",
+                path: "/deportivas",
             },
             {
                 name: "Otros",
@@ -89,33 +98,7 @@ export const navbarOptions: NavbarOption[] = [
     */
         name: "Aniversarios",
         path: "/aniversarios",
-        dropDown: true,
-        dropDownOptions: [
-            {
-                name: "20th Aniversario",
-                path: "/20th-aniversario",
-            },
-            {
-                name: "25th Aniversario",
-                path: "/25th-aniversario",
-            },
-            {
-                name: "35th Aniversario",
-                path: "/35th-aniversario",
-            },
-            {
-                name: "42th Aniversario",
-                path: "/42th-aniversario",
-            },
-            {
-                name: "43th Aniversario",
-                path: "/43th-aniversario",
-            },
-            {
-                name: "50th Aniversario",
-                path: "/50th-aniversario",
-            },
-        ],
+        dropDown: false,
     },
     {
         name: "Admin",
@@ -134,3 +117,51 @@ export const navbarOptions: NavbarOption[] = [
         ],
     },
 ];
+
+export type carouselItem = {
+    title: string;
+    description: string;
+    image: string;
+    link: string;
+    active?: string;
+    background?: string;
+};
+
+export const carouselItems = [
+    {
+        title: "Bienvenidos al Portal",
+        description:
+            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis sed sunt molestiae adipisci cumque vero quos possimus eum deleniti, laboriosam dolor! Suscipit in consectetur provident dolore eligendi sed eum numquam.",
+        image: "https://listindiario.com/files/main_image/uploads/2018/03/26/6433bfdd08a37.jpeg",
+        link: "/nuestro-isa",
+        active: "active",
+        background: InstitutoIMG.src,
+    },
+    {
+        title: "Encuentros",
+        description:
+            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis sed sunt molestiae adipisci cumque vero quos possimus eum deleniti, laboriosam dolor! Suscipit in consectetur provident dolore eligendi sed eum numquam.",
+        image: EventoIMG.src,
+        link: "/encuentros",
+        background: AmigosIMG.src,
+    },
+    {
+        title: "Grupos de ISA",
+        description:
+            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis sed sunt molestiae adipisci cumque vero quos possimus eum deleniti, laboriosam dolor! Suscipit in consectetur provident dolore eligendi sed eum numquam.",
+        image: GrupoIMG.src,
+        link: "/grupos",
+        background: GrupoIMG.src,
+    },
+    {
+        title: "Instituto de ISA",
+        description:
+            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis sed sunt molestiae adipisci cumque vero quos possimus eum deleniti, laboriosam dolor! Suscipit in consectetur provident dolore eligendi sed eum numquam.",
+        image: AmigosIMG.src,
+        link: "/instituto",
+        background: InstitutoIMG.src,
+    },
+];
+
+export const API_URL =
+    import.meta.env.PUBLIC_API_URL || "http://localhost:3000";
