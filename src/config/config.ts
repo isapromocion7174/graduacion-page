@@ -77,45 +77,9 @@ export const navbarOptions: NavbarOption[] = [
         ],
     },
     {
-        /*
-    
-        Aniversarios
-        20th Aniversario
-        25th Aniversario
-        35th Aniversario
-        42th Aniversario
-        43th Aniversario
-        50th Aniversario
-    */
         name: "Aniversarios",
-        path: "/aniversarios",
-        dropDown: true,
-        dropDownOptions: [
-            {
-                name: "20th Aniversario",
-                path: "/20th-aniversario",
-            },
-            {
-                name: "25th Aniversario",
-                path: "/25th-aniversario",
-            },
-            {
-                name: "35th Aniversario",
-                path: "/35th-aniversario",
-            },
-            {
-                name: "42th Aniversario",
-                path: "/42th-aniversario",
-            },
-            {
-                name: "43th Aniversario",
-                path: "/43th-aniversario",
-            },
-            {
-                name: "50th Aniversario",
-                path: "/50th-aniversario",
-            },
-        ],
+        path: "/aniversarios/indexaniversario",
+        dropDown: false,
     },
     {
         name: "Admin",
@@ -132,5 +96,68 @@ export const navbarOptions: NavbarOption[] = [
                 path: "/admin/eventos",
             },
         ],
-    },
+    }
+    
+]
+
+export type dropDownOptionani = {
+    name: string;
+    imageUrl:string;
+    path: string;
+};
+
+export type NavbarOptionani = {
+    name: string;
+   
+    path: string;
+    admin?: boolean;
+    dropDown: boolean;
+    dropDownOptionsani?: dropDownOptionani[];
+};
+
+export const navbarOptionsani: NavbarOptionani[] = [
+    
+    {
+        name: "Contacto",
+        path: "/aniversarios",
+        dropDown: true,
+        dropDownOptionsani: [
+
+                {
+                    name: "20th Aniversario",
+                    imageUrl:"https://res.cloudinary.com/di1hmzv5y/image/upload/v1703721437/ANIVERSARIOS/ANI-1%2820TH%29/ANI-1_IMG8_zmmvat.jpg",
+                    path: "/aniversarios/20th-aniversario",
+                },
+                {
+                    name: "25th Aniversario",
+                    imageUrl:"https://res.cloudinary.com/di1hmzv5y/image/upload/v1703721499/ANIVERSARIOS/ANI-2%2825TH%29/2_rreikg.png",
+                    path: "/aniversarios/25th-aniversario",
+                },
+                {
+                    name: "35th Aniversario",
+                    imageUrl:"https://res.cloudinary.com/di1hmzv5y/image/upload/v1703721528/ANIVERSARIOS/ANI-3%2835TH%29/Imagen10_cpwrty.jpg",
+                    path: "/aniversarios/35th-aniversario",
+                },
+                {
+                    name: "42th Aniversario",
+                    imageUrl:"https://res.cloudinary.com/di1hmzv5y/image/upload/v1703721557/ANIVERSARIOS/ANI-4%2842TH%29/IMG-20160807-WA0020_xore1z.jpg",
+                    path: "/aniversarios/42th-aniversario",
+                },
+                {
+                    name: "43th Aniversario",
+                    imageUrl:"",
+                    path: "/aniversarios/43th-aniversario",
+                },
+                {
+                    name: "50th Aniversario",
+                    imageUrl:"https://res.cloudinary.com/di1hmzv5y/image/upload/v1703721614/ANIVERSARIOS/ANI-6%2850TH%29/WhatsApp_Image_2021-08-08_at_8.54.16_PM_1_nrrtox.jpg",
+                    path: "/aniversarios/50th-aniversario",
+                },
+            ],
+        
+    }
+
+
 ];
+
+
