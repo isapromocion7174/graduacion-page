@@ -1,6 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import Userinput  from "../../components/user/index.astro";
+import Userinput  from "../../components/user/index";
 ---
 
 <Layout title='Mantenimiento Usuario'>
@@ -15,7 +15,7 @@ import Userinput  from "../../components/user/index.astro";
         >Mantenimiento de Usuario</h1>
     </div>
     <div>
-        <Userinput />
+        <Userinput client:load />
     </div>
     </main> 
 </Layout>

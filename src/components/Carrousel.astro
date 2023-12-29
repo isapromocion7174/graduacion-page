@@ -1,6 +1,13 @@
+---
+import EventoIMG from "@/assets/img/evento.png";
+import AmigosIMG from "@/assets/img/a.jpg";
+import GrupoIMG from "@/assets/img/grupo.jpg";
+import InstitutoIMG from "@/assets/img/universidad-isa-1.jpg";
+---
+
 <div
     id="indicators-carousel"
-    class=" relative w-full h-full max-w-none rounded-none"
+    class="relative w-full h-full max-w-none rounded-none"
     data-carousel="static"
 >
     <div class="relative h-full overflow-hidden">
@@ -8,22 +15,11 @@
             class="hidden duration-700 ease-in-out bg-black"
             data-carousel-item="active"
         >
-
-        
             <div
-                class="absolute w-full h-full grid grid-flow-col place-content-center
-                            gap-4
-                            z-20
-                         text-white"
+                class="absolute w-full h-full grid grid-flow-col place-content-center gap-4 z-20 text-white"
             >
                 <div
-                    class="max-w-screen-xl
-                            grid-rows-1
-                         grid grid-flow-col place-content-center
-                            grid-cols-2
-                            gap-24
-
-                            "
+                    class="max-w-screen-xl grid-rows-1 grid grid-flow-col place-content-center grid-cols-2 gap-24"
                 >
                     <div
                         class="flex
@@ -34,32 +30,33 @@
                          h-full
                          w-full"
                     >
-                    <div
-                        class="flex flex-col 
+                        <div
+                            class="flex flex-col
                         w-full
                         space-y-4"
-                    >
-                        <h2
-                            class="text-4xl font-bold text-white"
-                            data-carousel-title
-                        >Bienvenidos al Portal</h2>
-                        <p
-                            class="text-lg text-white"
-                            data-carousel-description
                         >
-                            Lorem ipsum, dolor sit amet consectetur adipisicing
-                            elit. Reiciendis sed sunt molestiae adipisci cumque
-                            vero quos possimus eum deleniti, laboriosam dolor!
-                            Suscipit in consectetur provident dolore eligendi
-                            sed eum numquam.
-                        </p>
-                    </div>
+                            <h2
+                                class="text-4xl font-bold text-white"
+                                data-carousel-title
+                            >
+                                Bienvenidos al Portal
+                            </h2>
+                            <p
+                                class="text-lg text-white"
+                                data-carousel-description
+                            >
+                                Lorem ipsum, dolor sit amet consectetur
+                                adipisicing elit. Reiciendis sed sunt molestiae
+                                adipisci cumque vero quos possimus eum deleniti,
+                                laboriosam dolor! Suscipit in consectetur
+                                provident dolore eligendi sed eum numquam.
+                            </p>
+                        </div>
                         <a href="">
                             <button
-                                class="px-4 py-2 bg-white rounded-full text-black 
+                                class="px-4 py-2 bg-white rounded-full text-black
                                 hover:bg-gray-200 transition
-                                dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700
-                                "
+                                dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700"
                             >
                                 Ver mas
                             </button>
@@ -76,12 +73,11 @@
                                 h-full
                                 w-full"
                     >
-                    <img
-                    class="rounded-xl shadow-lg"
-                    src="https://listindiario.com/files/main_image/uploads/2018/03/26/6433bfdd08a37.jpeg"
-                    alt=""
-                  />
-                  
+                        <img
+                            class="rounded-xl shadow-lg"
+                            src="https://listindiario.com/files/main_image/uploads/2018/03/26/6433bfdd08a37.jpeg"
+                            alt=""
+                        />
                     </div>
                 </div>
             </div>
@@ -94,28 +90,28 @@
         </div>
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
             <img
-                src="https://png.pngtree.com/background/20230516/original/pngtree-path-through-the-forest-wallpaper-picture-image_2615805.jpg"
+                src={EventoIMG.src}
                 class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                 alt="..."
             />
         </div>
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
             <img
-                src="https://png.pngtree.com/background/20230516/original/pngtree-path-through-the-forest-wallpaper-picture-image_2615805.jpg"
+                src={InstitutoIMG.src}
                 class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                 alt="..."
             />
         </div>
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
             <img
-                src="https://png.pngtree.com/background/20230516/original/pngtree-path-through-the-forest-wallpaper-picture-image_2615805.jpg"
+                src={GrupoIMG.src}
                 class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                 alt="..."
             />
         </div>
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
             <img
-                src="https://png.pngtree.com/background/20230516/original/pngtree-path-through-the-forest-wallpaper-picture-image_2615805.jpg"
+                src={AmigosIMG.src}
                 class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                 alt="..."
             />
@@ -206,17 +202,13 @@
         </span>
     </button>
     <script>
-        
+        const nextButton = document.querySelector("[data-carousel-next]");
 
-        const nextButton = document.querySelector('[data-carousel-next]');
-
-     
         const goToNextSlide = () => {
-          const event = new Event('click');
-          nextButton.dispatchEvent(event);
+            const event = new Event("click");
+            nextButton.dispatchEvent(event);
         };
-      
-        setInterval(goToNextSlide, 5000);
-      </script>
-      
+
+        setInterval(goToNextSlide, 10);
+    </script>
 </div>

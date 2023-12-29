@@ -1,33 +1,24 @@
 ---
-import Layout from '@/layouts/Layout.astro';
-import Carousel from '@/components/Carrousel.astro';
+import Layout from "@/layouts/Layout.astro";
+import CarouselFine from "@/components/Carousel/index.astro";
 ---
 
-<Layout title='Home'>
-	<main class="">
-		<div class="
-			w-full
-			h-full
-		
-		">
-		<Carousel />
-		</div>	
-
-	</main>
+<Layout title="Home">
+    <main >
+        <div class="w-full h-full">
+            <CarouselFine client:load transition:name="Carousel" />
+        </div>
+    </main>
 </Layout>
 
-
 <style>
-	main {
-		flex: 1;
-		height: 100%;
-		width: 100%;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: flex-start;
-	}
-
-
+    main {
+        flex: 1;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
 </style>
-
