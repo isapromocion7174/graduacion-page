@@ -14,7 +14,7 @@ const index = () => {
         console.log(user);
     }, [user]);
     return (
-        <nav class="bg-[#26c4bc] rela border-gray-200 dark:bg-gray-900 dark:border-gray-700 w-full ">
+        <nav class="bg-[#d0fff3] rela border-gray-200 dark:bg-gray-900 dark:border-gray-700 w-full ">
             <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                 <a
                     href="/"
