@@ -147,8 +147,7 @@ export const navbarOptionsani: NavbarOptionani[] = [
             },
             {
                 name: "43th Aniversario",
-                imageUrl:
-                    "https://res.cloudinary.com/di1hmzv5y/image/upload/v1703721622/ANIVERSARIOS/ANI-6%2850TH%29/WhatsApp_Image_2021-08-06_at_11.56.40_AM_gtuq7t.jpg",
+                imageUrl: "",
                 path: "/aniversarios/43th-aniversario",
             },
             {
@@ -158,6 +157,51 @@ export const navbarOptionsani: NavbarOptionani[] = [
                 path: "/aniversarios/50th-aniversario",
             },
         ],
+    },
+];
+
+export type carouselItem = {
+    title: string;
+    description: string;
+    image: string;
+    link: string;
+    active?: string;
+    background?: string;
+};
+
+export const carouselItems = [
+    {
+        title: "Bienvenidos al Portal",
+        description:
+            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis sed sunt molestiae adipisci cumque vero quos possimus eum deleniti, laboriosam dolor! Suscipit in consectetur provident dolore eligendi sed eum numquam.",
+        image: "https://listindiario.com/files/main_image/uploads/2018/03/26/6433bfdd08a37.jpeg",
+        link: "/nuestro-isa",
+        active: "active",
+        background: InstitutoIMG.src,
+    },
+    {
+        title: "Encuentros",
+        description:
+            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis sed sunt molestiae adipisci cumque vero quos possimus eum deleniti, laboriosam dolor! Suscipit in consectetur provident dolore eligendi sed eum numquam.",
+        image: EventoIMG.src,
+        link: "/encuentros",
+        background: AmigosIMG.src,
+    },
+    {
+        title: "Grupos de ISA",
+        description:
+            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis sed sunt molestiae adipisci cumque vero quos possimus eum deleniti, laboriosam dolor! Suscipit in consectetur provident dolore eligendi sed eum numquam.",
+        image: GrupoIMG.src,
+        link: "/grupos",
+        background: GrupoIMG.src,
+    },
+    {
+        title: "Instituto de ISA",
+        description:
+            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis sed sunt molestiae adipisci cumque vero quos possimus eum deleniti, laboriosam dolor! Suscipit in consectetur provident dolore eligendi sed eum numquam.",
+        image: AmigosIMG.src,
+        link: "/instituto",
+        background: InstitutoIMG.src,
     },
 ];
 
