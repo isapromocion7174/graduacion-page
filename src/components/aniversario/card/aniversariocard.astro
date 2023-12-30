@@ -1,33 +1,47 @@
 ---
-
 import { navbarOptionsani } from "../../../config/config";
-
 ---
 
+<div class="
+    grid grid-cols-1 gap-10 
+    sm:grid-cols-1 sm:gap-10
+    md:grid-cols-2 md:gap-10
+    lg:grid-cols-3 lg:gap-10
+    xl:grid-cols-3 xl:gap-10
+    2xl:grid-cols-3 2xl:gap-10
+">
+    {
+        navbarOptionsani
+            .filter((option) => option.dropDown && option.dropDownOptionsani)
+            .map((option) =>
+                option.dropDownOptionsani.map((dropdownOptionani) => (
+                <a href={dropdownOptionani.path} class="bg-white rounded-2xl shadow-2xl transition-transform duration-300 ease-in-out transform hover:scale-105 relative border-gray-200 dark:bg-gray-800 dark:border-gray-700 container justify-between text-center max-w-96 pb-6  ">
+                  <div
+                        class="
+                        flex flex-col items-center justify-center
+                        max-h-96
+                        gap-3
+       "
+                    >
+                        <div class="transform w-full  overflow-hidden mb-3 rounded-t-2xl h-96 ">
+                            <img
+                                src={dropdownOptionani.imageUrl}
+                                alt={dropdownOptionani.name}
+                                class="object-cover object-center w-full h-full scale-105 transition-transform duration-300 ease-in-out transform hover:scale-105"
+                            />
+                        </div>
+                        <span class=" font-bold dark:text-white text-gray-800 text-xl mb-2">
+                            {dropdownOptionani.name}
+                        </span>
 
-<div class="grid grid-cols-3 gap-10">
-    {navbarOptionsani
-      .filter((option) => option.dropDown && option.dropDownOptionsani)
-      .map((option) =>
-        option.dropDownOptionsani.map((dropdownOptionani) => (
-       <div class="bg-white p-6 rounded-2xl shadow-2xl transition-transform duration-300 ease-in-out transform hover:scale-105 rela border-gray-200 dark:bg-gray-800 dark:border-gray-700 container justify-between text-center">
-   <div class="transform w-[200px] h-[110px] overflow-hidden rounded-3xl mb-3">
-              <img
-                src={dropdownOptionani.imageUrl} 
-                alt={dropdownOptionani.name}
-              />
-            </div>
-            <span class="text-sm font-bold dark:text-white">{dropdownOptionani.name}</span>
-          
-             <a href={dropdownOptionani.path} class="text-blue-600 text-sm hover:underline mt-4 block">
-                <button  class="inline-block bg-blue-500 text-white px-4 py-2 rounded-md transition duration-300 ease-in-out transform hover:scale-105 hover:bg-blue-600"
->Ver mas</button>
-            </a>
-          </div>
-        ))
-      )}
-  </div>
-  
-      
-      
+                        <button class=" bg-blue-500 text-white px-4 py-2 rounded-md transition duration-300 ease-in-out transform hover:scale-105 hover:bg-blue-600 block  ">
+                                Ver mas
+                            </button>
+                     
+                       
+                    </div>
+                  </a>
+                ))
+            )
+    }
 </div>

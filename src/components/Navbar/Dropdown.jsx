@@ -1,6 +1,9 @@
 import React from "react";
+import { useUserStore } from "@/stores/userStore";
 
 const Dropdown = ({ dropDownOption, id, admin = false }) => {
+    const setUser = useUserStore((state) => state.setUser);
+    const setToken = useUserStore((state) => state.setToken);
     return (
         <div
             id={id}
@@ -26,12 +29,18 @@ const Dropdown = ({ dropDownOption, id, admin = false }) => {
 
             {admin && (
                 <div className="py-1">
-                    <a
-                        href="#"
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                    <button
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white w-full
+                        text-left"
+                        type="button"
+                        onClick={() => {
+                            setUser(null);
+                            setToken(null);
+                            localStorage.removeItem("x-token");
+                        }}
                     >
                         Sign out
-                    </a>
+                    </button>
                 </div>
             )}
         </div>
