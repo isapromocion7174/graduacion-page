@@ -8,22 +8,22 @@ import { useThemeStore } from "@/stores/themeStore.js";
 
 const ADMIN_ROLE = import.meta.env.PUBLIC_ADMIN_ROLE;
 
-const LogoDarkMode = () => {
+const LogoDarkMode = (props) => {
     return (
         <img
             src="https://res.cloudinary.com/di1hmzv5y/image/upload/v1703890101/TakeThis_te0wjp.png"
-            className="h-12"
             alt="ISA LOGO"
+            {...props}
         />
     );
 };
 
-const LogoLightMode = () => {
+const LogoLightMode = (props) => {
     return (
         <img
             src="https://res.cloudinary.com/di1hmzv5y/image/upload/v1703888573/Instituto-Superior-de-Agricultura-ISA-removebg-preview_d7xypv.png"
-            className="h-12"
             alt="ISA LOGO"
+            {...props}
         />
     );
 };
@@ -31,10 +31,20 @@ const LogoLightMode = () => {
 const index = () => {
     const user = useUserStore((state) => state.user);
     const theme = useThemeStore((state) => state.theme);
-
+    const setTheme = useThemeStore((state) => state.setTheme);
     useEffect(() => {
-        console.log(user);
-    }, [user]);
+        if (
+            localStorage.getItem("color-theme") === "dark" ||
+            (!("color-theme" in localStorage) &&
+                window.matchMedia("(prefers-color-scheme: dark)").matches)
+        ) {
+            document.documentElement.classList.add("dark");
+            setTheme("dark");
+        } else {
+            document.documentElement.classList.remove("dark");
+            setTheme("light");
+        }
+    }, []);
     return (
         <nav className="bg-[#d0fff3] rela border-gray-200 dark:bg-gray-900 dark:border-gray-700 w-full ">
             <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
@@ -42,8 +52,29 @@ const index = () => {
                     href="/"
                     className="flex items-center space-x-3 rtl:space-x-reverse"
                 >
-                    {theme ? <LogoDarkMode /> : <LogoLightMode />}
-                    <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+                    {theme == "dark" ? (
+                        <LogoDarkMode
+                            className="h-6 ms:h-9 
+                    md:h-10
+                    lg:h-12
+                    xl:h-14
+                    "
+                        />
+                    ) : (
+                        <LogoLightMode
+                            className="h-6 ms:h-9 
+                    md:h-10
+                    lg:h-12
+                    xl:h-14
+                    "
+                        />
+                    )}
+                    <span
+                        className="self-center text-lg font-semibold whitespace-nowrap dark:text-white
+                        ms:text-lg
+                        md:text-xl
+                    "
+                    >
                         ISA PROMOCION 71-74
                     </span>
                 </a>

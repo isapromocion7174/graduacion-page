@@ -5,19 +5,13 @@ const SwitcherDarkMode = () => {
     const themeToggleDarkIcon = useRef();
     const themeToggleLightIcon = useRef();
     const setTheme = useThemeStore((state) => state.setTheme);
+    const theme = useThemeStore((state) => state.theme);
+
     useEffect(() => {
-        if (
-            localStorage.getItem("color-theme") === "dark" ||
-            (!("color-theme" in localStorage) &&
-                window.matchMedia("(prefers-color-scheme: dark)").matches)
-        ) {
-            document.documentElement.classList.add("dark");
+        if (theme) {
             themeToggleLightIcon.current.classList.remove("hidden");
-            setTheme(true);
         } else {
-            document.documentElement.classList.remove("dark");
             themeToggleDarkIcon.current.classList.remove("hidden");
-            setTheme(false);
         }
     }, []);
 
@@ -30,11 +24,11 @@ const SwitcherDarkMode = () => {
             if (localStorage.getItem("color-theme") === "light") {
                 document.documentElement.classList.add("dark");
                 localStorage.setItem("color-theme", "dark");
-                setTheme(true);
+                setTheme("dark");
             } else {
                 document.documentElement.classList.remove("dark");
                 localStorage.setItem("color-theme", "light");
-                setTheme(false);
+                setTheme("light");
             }
 
             // if NOT set via local storage previously

@@ -1,6 +1,6 @@
 import { create } from "zustand";
 
 export const useThemeStore = create((set) => ({
-    theme: false,
+    theme: null,
     setTheme: (theme) => set({ theme }),
 }));
