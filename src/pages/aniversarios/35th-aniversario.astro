@@ -1,6 +1,8 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import EventInput  from "../../components/event/index.astro";
+import Navaniversario from "@/components/aniversario/navaniversario/nav.astro";
+import Img20th  from "../../components/aniversario/20th/img.astro";
 ---
 
 <Layout title='35th Aniversario'>
@@ -15,7 +17,13 @@ import EventInput  from "../../components/event/index.astro";
             "
         >35th Aniversario</h1>
     </div>
-
+    <div> 
+        <Navaniversario/>
+        <div class="ml-[20%] p-10 line-height-50 h-screen">
+           <Img20th/>
+        </div>
+        
+           </div>
     </main> 
 </Layout>
 

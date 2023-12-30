@@ -171,6 +171,8 @@ export const navbarOptionsani: NavbarOptionani[] = [
 ];
 
 
+
+
 export type carouselItem = {
     title: string;
     description: string;

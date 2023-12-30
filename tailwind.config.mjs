@@ -22,6 +22,8 @@ export default {
                     800: "#115e59",
                     900: "#134e4a",
                     950: "#042f2e",
+
+                    
                 },
             },
         },
@@ -65,3 +67,4 @@ export default {
     plugins: [flowbite],
     darkMode: "class", // or 'media' or 'class'
 };
+
