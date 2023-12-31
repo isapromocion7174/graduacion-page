@@ -24,11 +24,12 @@ const role = () => {
                 name="rol"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 onChange="handleGenderChange(this)"
+                defaultValue={"None"}
             >
                 {roles &&
                     roles.map((rol) => {
                         return (
-                            <option key={rol.id} value={rol.id}>
+                            <option key={rol._id} value={rol._id}>
                                 {rol.nombre}
                             </option>
                         );
