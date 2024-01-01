@@ -72,7 +72,7 @@ export const navbarOptions50th: NavbarOption50th[] = [
                     imageUrl22:"https://res.cloudinary.com/di1hmzv5y/image/upload/v1703721601/ANIVERSARIOS/ANI-6%2850TH%29/WhatsApp_Image_2021-08-08_at_8.51.10_PM_2_zr2brq.jpg",
    
                     aniversario:"/aniversarios/50th/50th-aniversario",
-                    regresar:"/aniversarios/indexaniversario"
+                    regresar:"/aniversarios"
                 
                 }, 
            

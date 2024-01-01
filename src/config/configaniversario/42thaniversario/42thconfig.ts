@@ -39,7 +39,7 @@ export const navbarOptions42th: NavbarOption42th[] = [
                     imageUrl6:"https://res.cloudinary.com/di1hmzv5y/image/upload/v1703721557/ANIVERSARIOS/ANI-4%2842TH%29/IMG-20160807-WA0020_xore1z.jpg",
                     imageUrl7:"https://res.cloudinary.com/di1hmzv5y/image/upload/v1703721556/ANIVERSARIOS/ANI-4%2842TH%29/IMG-20160806-WA0027_qxd29x.jpg",
          
-                  regresar:"/aniversarios/indexaniversario"
+                  regresar:"/aniversarios"
                 
                 },
            

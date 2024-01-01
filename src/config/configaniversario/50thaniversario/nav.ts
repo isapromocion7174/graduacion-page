@@ -29,7 +29,7 @@ export const navbarOptions50thnav: NavbarOption50thnav[] = [
                 {
                  irimg:"/aniversarios/50th/50th-aniversario-imagenes",
                  irvideo:"/aniversarios/50th/50th-aniversario-videos",
-                 regresar:"/aniversarios/indexaniversario"
+                 regresar:"/aniversarios"
                 
                 }, 
            

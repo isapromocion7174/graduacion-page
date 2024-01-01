@@ -70,7 +70,7 @@ export const navbarOptions50thv: NavbarOption50thv[] = [
                     videoUrl11:"https://res.cloudinary.com/di1hmzv5y/video/upload/v1703721650/ANIVERSARIOS/ANI-6%2850TH%29/WhatsApp_Video_2021-08-06_at_3.37.37_PM_yjnxgx.mp4",
                     irimagen:"/aniversarios/50th/50th-aniversario-imagenes",
                     aniversario:"/aniversarios/50th/50th-aniversario",
-                    regresar:"/aniversarios/indexaniversario"
+                    regresar:"/aniversarios"
            
                 
                 }, 
