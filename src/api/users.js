@@ -25,14 +25,13 @@ export const getUser = async (id, query) => {
     return data;
 };
 
-export const createUser = async (query, token) => {
+export const createUser = async (form, token) => {
     const response = await fetch(`${API_URL}/user`, {
         method: "POST",
         headers: {
-            "Content-Type": "application/json",
             "x-token": token,
         },
-        body: JSON.stringify(query),
+        body: form,
     });
     const data = await response.json();
     return data;

@@ -1,34 +1,55 @@
 ---
-
-import { navbarOptions20th } from "../../../config/configaniversario/20thaniversario/20thconfig";
-
+import { Images20Th } from "@/config/aniversarios/20th/Images";
 ---
 
-
 <style>
+    /* Agrega las transiciones para el overlay */
+    .overlay-transition {
+        transition: transform 0.3s ease-in-out;
+        transform: scale(0);
+    }
 
-  /* Agrega las transiciones para el overlay */
-.overlay-transition {
-  transition: transform 0.3s ease-in-out;
-  transform: scale(0);
-}
-
-.overlay-visible {
-  transform: scale(1);
-}
-
+    .overlay-visible {
+        transform: scale(1);
+    }
 </style>
-<div class=" bg-slate-200 dark:bg-gray-800 h-full py-6 sm:py-8 lg:py-12 ">
-  {navbarOptions20th
+
+<div
+    class="py-6 sm:py-8 lg:py-12
+mx-4 pb-6
+md:mx-8 md:pb-8
+lg:mx-12 lg:pb-12
+xl:mx-16 xl:pb-16
+2xl:mx-20 2xl:pb-20
+3xl:mx-24 3xl:pb-24"
+>
+    <!--  {navbarOptions20th
     .filter((option) => option.dropDown && option.dropDownOptions20th)
     .map((option) =>
-      option.dropDownOptions20th.map((dropDownOption20th) => (
-  <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
-      <div class="mb-4 flex text-center items-center justify-between gap-8 sm:mb-8 md:mb-12">
-          <div class="flex items-center gap-12">
-              <h2 class="text-2xl  font-bold text-gray-800 lg:text-3xl dark:text-white">20th Aniversario</h2>
+      option.dropDownOptions20th.map((dropDownOption20th) => ( -->
+    <div class="mx-auto w-full px-4 md:px-8">
+        <div
+            class="mb-4 flex text-center items-center justify-between gap-8 sm:mb-8 md:mb-12"
+        >
+            <div class="flex items-center gap-12">
+                <h2
+                    class="text-2xl font-bold text-gray-800 lg:text-3xl dark:text-white"
+                >
+                    20th Aniversario
+                </h2>
+            </div>
 
+            <a
+                href="/aniversarios"
+                class="inline-block rounded-lg border bg-white dark:bg-gray-700 dark:border-none px-4 py-2 text-center text-sm font-semibold text-gray-500 dark:text-gray-200 outline-none
+              hover:bg-gray-100
+              ring-indigo-300 dark:hover:bg-gray-800 focus-visible:ring active:bg-gray-9 00 md:px-8 md:py-3 md:text-base"
+            >
+                Volver aniversarios
+            </a>
+        </div>
 
+<<<<<<< HEAD:src/components/aniversario/50th/img.astro
           </div>
 <div class="mt-3 sm:mt-5 sm:ml-8"> 
           <a href={dropDownOption20th.regresar}
@@ -64,154 +85,219 @@ import { navbarOptions20th } from "../../../config/configaniversario/20thanivers
               <div
                   class="pointer-events-none absolute inset-0 bg-gradient-to-t via-transparent to-transparent opacity-50">
               </div>
+=======
+        <div class="grid grid-cols-1 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
+            <div
+                class="group relative rounded-2xl flex h-96 bg-gray-100 shadow-lg md:h-80"
+            >
+                <img
+                    src={Images20Th[0]}
+                    class="absolute rounded-2xl inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-[102%]"
+                />
+>>>>>>> 917f7adffc6de315345810a6bb54b3e654dc50f9:src/components/aniversario/20th/img.astro
 
+                <div
+                    class="pointer-events-none absolute inset-0 bg-gradient-to-t via-transparent to-transparent opacity-50"
+                >
                 </div>
+            </div>
 
+            <div
+                class="group relative flex h-48 rounded-2xl bg-gray-100 shadow-lg md:col-span-2 md:h-80"
+            >
+                <img
+                    src={Images20Th[1]}
+                    loading="lazy"
+                    alt="Photo by Magicle"
+                    class="absolute rounded-2xl inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-[102%]"
+                />
 
-          <div 
-              class="group relative flex h-48  rounded-2xl bg-gray-100 shadow-lg md:col-span-2 md:h-80">
-              <img src={dropDownOption20th.imageUrl2}  loading="lazy" alt="Photo by Magicle" class="absolute rounded-2xl inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-[102%]" />
+                <div
+                    class="pointer-events-none absolute inset-0 bg-gradient-to-t via-transparent to-transparent opacity-50"
+                >
+                </div>
+            </div>
 
-              <div
-                  class="pointer-events-none absolute inset-0 bg-gradient-to-t via-transparent to-transparent opacity-50">
-              </div>
+            <div
+                class="group relative flex h-48 rounded-2xl bg-gray-100 shadow-lg md:col-span-2 md:h-80"
+            >
+                <img
+                    src={Images20Th[2]}
+                    loading="lazy"
+                    alt="Photo by Martin Sanchez"
+                    class="absolute rounded-2xl inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-[102%]"
+                />
 
-                       </div>
-    
-          <div 
-              class="group relative flex h-48 rounded-2xl bg-gray-100 shadow-lg md:col-span-2 md:h-80">
-              <img src={dropDownOption20th.imageUrl3}  loading="lazy" alt="Photo by Martin Sanchez" class="absolute rounded-2xl inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-[102%]" />
+                <div
+                    class="pointer-events-none absolute inset-0 bg-gradient-to-t via-transparent to-transparent opacity-50"
+                >
+                </div>
+            </div>
 
-              <div
-              class="pointer-events-none absolute inset-0 bg-gradient-to-t via-transparent to-transparent opacity-50">
-          </div>
+            <div
+                class="group relative flex h-96 rounded-2xl bg-gray-100 shadow-lg md:h-80"
+            >
+                <img
+                    src={Images20Th[3]}
+                    loading="lazy"
+                    alt="Photo by Lorenzo Herrera"
+                    class="absolute rounded-2xl inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-[102%]"
+                />
 
-                      </div>
+                <div
+                    class="pointer-events-none absolute inset-0 bg-gradient-to-t via-transparent to-transparent opacity-50"
+                >
+                </div>
+            </div>
 
-          <div 
-              class="group relative flex h-96 rounded-2xl bg-gray-100 shadow-lg md:h-80">
-              <img src={dropDownOption20th.imageUrl4}  loading="lazy" alt="Photo by Lorenzo Herrera" class="absolute rounded-2xl inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-[102%]" />
+            <div
+                class="group relative flex h-52 rounded-2xl bg-gray-100 shadow-lg md:col-span-2 md:h-[700px] md:w-[945px]"
+            >
+                <img
+                    src={Images20Th[4]}
+                    loading="lazy"
+                    alt="Photo by Minh Pham"
+                    class="absolute rounded-2xl inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-[102%]"
+                />
 
-              <div
-              class="pointer-events-none absolute inset-0 bg-gradient-to-t via-transparent to-transparent opacity-50">
-          </div>
-                 </div>
+                <div
+                    class="pointer-events-none absolute inset-0 bg-gradient-to-t via-transparent to-transparent opacity-50"
+                >
+                </div>
+            </div>
+            <div
+                class="group relative flex h-48 rounded-2xl bg-gray-100 shadow-lg md:col-span-2 md:h-80"
+            >
+                <img
+                    src={Images20Th[5]}
+                    loading="lazy"
+                    alt="Photo by Magicle"
+                    class="absolute inset-0 h-full w-full rounded-2xl object-cover object-center transition duration-200 group-hover:scale-[102%]"
+                />
 
-      <div 
-      class="group relative flex h-52 rounded-2xl bg-gray-100 shadow-lg md:col-span-2 md:h-[700px] md:w-[945px]">
-       <img src={dropDownOption20th.imageUrl5}  loading="lazy" alt="Photo by Minh Pham" class="absolute rounded-2xl inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-[102%]" />
+                <div
+                    class="pointer-events-none absolute inset-0 bg-gradient-to-t via-transparent to-transparent opacity-50"
+                >
+                </div>
+            </div>
 
-       <div
-       class="pointer-events-none absolute inset-0 bg-gradient-to-t via-transparent to-transparent opacity-50">
-   </div>
+            <div
+                class="group relative flex h-48 rounded-2xl bg-gray-100 shadow-lg md:h-80"
+            >
+                <img
+                    src={Images20Th[6]}
+                    loading="lazy"
+                    alt="Photo by Minh Pham"
+                    class="absolute inset-0 h-full w-full rounded-2xl object-cover object-center transition duration-200 group-hover:scale-[102%]"
+                />
 
-       </div>
-  <div 
-  class="group relative flex h-48 rounded-2xl bg-gray-100 shadow-lg md:col-span-2 md:h-80">
-  <img src={dropDownOption20th.imageUrl6}  loading="lazy" alt="Photo by Magicle" class="absolute inset-0 h-full w-full rounded-2xl object-cover object-center transition duration-200 group-hover:scale-[102%]" />
+                <div
+                    class="pointer-events-none absolute inset-0 bg-gradient-to-t via-transparent to-transparent opacity-50"
+                >
+                </div>
+            </div>
 
-  <div
-                  class="pointer-events-none absolute inset-0 bg-gradient-to-t via-transparent to-transparent opacity-50">
-              </div>
+            <div
+                class="group relative flex h-48 rounded-2xl bg-gray-100 shadow-lg md:col-span-2 md:h-80"
+            >
+                <img
+                    src={Images20Th[7]}
+                    loading="lazy"
+                    alt="Photo by Magicle"
+                    class="absolute inset-0 h-full w-full rounded-2xl object-cover object-center transition duration-200 group-hover:scale-[102%]"
+                />
+                <div
+                    class="pointer-events-none absolute inset-0 bg-gradient-to-t via-transparent to-transparent opacity-50"
+                >
+                </div>
+            </div>
+            <div
+                class="group relative flex h-96 rounded-2xl bg-gray-100 shadow-lg md:h-80"
+            >
+                <img
+                    src={Images20Th[8]}
+                    loading="lazy"
+                    alt="Photo by Minh Pham"
+                    class="absolute inset-0 h-full w-full rounded-2xl object-cover object-center transition duration-200 group-hover:scale-[102%]"
+                />
 
-  </div>
-      
-<div 
-class="group relative flex h-48 rounded-2xl  bg-gray-100 shadow-lg md:h-80  ">
-<img src={dropDownOption20th.imageUrl7}  loading="lazy" alt="Photo by Minh Pham" class="absolute inset-0 h-full w-full rounded-2xl object-cover object-center transition duration-200 group-hover:scale-[102%]" />
-
-<div
-class="pointer-events-none absolute inset-0 bg-gradient-to-t via-transparent to-transparent opacity-50">
+                <div
+                    class="pointer-events-none absolute inset-0 bg-gradient-to-t via-transparent to-transparent opacity-50"
+                >
+                </div>
+                <div
+                    id="overlay"
+                    class="fixed top-0 left-0 w-full h-full bg-opacity-75 hidden items-center justify-center bg-black"
+                >
+                    <div
+                        id="overlayContent"
+                        class="rounded-lg shadow-lg p-4 md:p-8 overlay-transition"
+                    >
+                        <img
+                            id="overlayImage"
+                            src=""
+                            alt="Overlay Image"
+                            class="w-full h-auto md:h-full object-cover rounded-lg"
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-
-</div>
-
-<div 
-class="group relative flex h-48 rounded-2xl bg-gray-100 shadow-lg md:col-span-2 md:h-80 ">
-<img src={dropDownOption20th.imageUrl8} loading="lazy" alt="Photo by Magicle" class="absolute inset-0 h-full w-full rounded-2xl object-cover object-center transition duration-200 group-hover:scale-[102%]" />
-<div
-class="pointer-events-none absolute inset-0 bg-gradient-to-t via-transparent to-transparent opacity-50">
-</div>
-
-
-</div>
-<div 
-class="group relative flex h-96 rounded-2xl  bg-gray-100 shadow-lg md:h-80  ">
-<img src={dropDownOption20th.imageUrl9}  loading="lazy" alt="Photo by Minh Pham" class="absolute inset-0 h-full w-full rounded-2xl object-cover object-center transition duration-200 group-hover:scale-[102%]" />
-
-<div
-class="pointer-events-none absolute inset-0 bg-gradient-to-t via-transparent to-transparent opacity-50">
-</div>
-<div id="overlay" class="fixed top-0 left-0 w-full h-full bg-opacity-75 hidden items-center justify-center bg-black">
-  <div id="overlayContent" class="rounded-lg shadow-lg p-4 md:p-8  overlay-transition">
-    <img id="overlayImage" src="" alt="Overlay Image" class="w-full h-auto md:h-full object-cover rounded-lg">
-  </div>
-</div>
-
-
-
-</div>
-
-
-      
-</div>
-      
-</div>
-      
-</div></div>
-        ))
-      )}
-</div>
+<!--    ))
+      )} -->
 
 <script>
+    function openOverlay(imageSrc) {
+        const overlay = document.getElementById("overlay");
+        const overlayContent = document.getElementById("overlayContent");
+        const overlayImage = document.getElementById("overlayImage");
 
-function openOverlay(imageSrc) {
-  const overlay = document.getElementById('overlay');
-  const overlayContent = document.getElementById('overlayContent');
-  const overlayImage = document.getElementById('overlayImage');
+        if (overlayImage.tagName.toLowerCase() === "img") {
+            overlayImage.setAttribute("src", imageSrc);
+        }
 
-  if (overlayImage.tagName.toLowerCase() === 'img') {
-    overlayImage.setAttribute('src', imageSrc);
-  }
+        overlay.style.display = "flex";
 
-  overlay.style.display = 'flex';
+        // Forzar el reflow antes de aplicar la clase para activar la transición
+        void overlayContent.offsetWidth;
 
-  // Forzar el reflow antes de aplicar la clase para activar la transición
-  void overlayContent.offsetWidth;
+        // Agregar una clase para mostrar el overlay con una transición suave
+        overlayContent.classList.add("overlay-visible");
 
-  // Agregar una clase para mostrar el overlay con una transición suave
-  overlayContent.classList.add('overlay-visible');
-
-  // Agregar una clase al body para permitir el desplazamiento
-  document.body.classList.add('overflow-y-auto');
-}
-  document.querySelectorAll('.group img').forEach(img => {
-    img.addEventListener('click', function() {
-      openOverlay(this.src);
+        // Agregar una clase al body para permitir el desplazamiento
+        document.body.classList.add("overflow-y-auto");
+    }
+    document.querySelectorAll(".group img").forEach((img) => {
+        img.addEventListener("click", function () {
+            openOverlay(this.src);
+        });
     });
-  });
-  
-  function closeOverlay() {
-  const overlay = document.getElementById('overlay');
-  const overlayContent = document.getElementById('overlayContent');
 
-  // Remover la clase para restaurar el comportamiento normal de desplazamiento
-  document.body.classList.remove('overflow-y-auto');
+    function closeOverlay() {
+        const overlay = document.getElementById("overlay");
+        const overlayContent = document.getElementById("overlayContent");
 
-  // Agregar una clase para ocultar el overlay con una transición suave
-  overlayContent.classList.remove('overlay-visible');
+        // Remover la clase para restaurar el comportamiento normal de desplazamiento
+        document.body.classList.remove("overflow-y-auto");
 
-  setTimeout(() => {
-    overlay.style.display = 'none';
-  }, 300); // Ajusta el tiempo de la transición según sea necesario
-}
-  
-  // Asignar la función closeOverlay al evento de clic de la imagen en el overlay
-  document.getElementById('overlayImage').addEventListener('click', function() {
-    closeOverlay();
-  });
-  
-  
-  </script>
+        // Agregar una clase para ocultar el overlay con una transición suave
+        overlayContent.classList.remove("overlay-visible");
 
+<<<<<<< HEAD:src/components/aniversario/50th/img.astro
 ../../../config/configaniversario/20thaniversario/20thconfig../../../config/configaniversario/20thconfig
+=======
+        setTimeout(() => {
+            overlay.style.display = "none";
+        }, 300); // Ajusta el tiempo de la transición según sea necesario
+    }
+
+    // Asignar la función closeOverlay al evento de clic de la imagen en el overlay
+    document
+        .getElementById("overlayImage")
+        .addEventListener("click", function () {
+            closeOverlay();
+        });
+</script>
+>>>>>>> 917f7adffc6de315345810a6bb54b3e654dc50f9:src/components/aniversario/20th/img.astro
