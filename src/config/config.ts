@@ -161,7 +161,7 @@ export const navbarOptionsani: NavbarOptionani[] = [
                 {
                     name: "50th Aniversario",
                     imageUrl:"https://res.cloudinary.com/di1hmzv5y/image/upload/v1703721614/ANIVERSARIOS/ANI-6%2850TH%29/WhatsApp_Image_2021-08-08_at_8.54.16_PM_1_nrrtox.jpg",
-                    path: "/aniversarios/50th-aniversario",
+                    path: "/aniversarios/50th/50th-aniversario",
                 },
             ],
         

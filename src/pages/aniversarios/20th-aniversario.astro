@@ -1,7 +1,9 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import Img20th  from "../../components/aniversario/20th/img.astro";
+
 import Navaniversario from "@/components/aniversario/navaniversario/nav.astro";
+import App from "@/components/aniversario/20th/img";
+
 
 ---
 
@@ -14,7 +16,7 @@ import Navaniversario from "@/components/aniversario/navaniversario/nav.astro";
 
 
  <div >
-    <Img20th/>
+    <App client:load/>
  </div>
  
 
