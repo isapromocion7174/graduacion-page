@@ -1,29 +1,23 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import EventInput  from "../../components/event/index.jsx";
-import Navaniversario from "@/components/aniversario/navaniversario/nav.astro";
-import Img20th  from "../../components/aniversario/20th/img.astro";
+import App from "@/components/aniversario/35th/img";
+
 ---
 
-<Layout title='35th Aniversario'>
+<Layout title='20th Aniversario' >
     <main>
-    <div 
-        class="flex flex-col items-center justify-center w-full h-32"
-    >
-        <h1
-            class="text-3xl text-center text-gray-700 font-bold leading-8 mt-10
-            dark:text-gray-100 sm:text-4xl sm:leading-10
-
-            "
-        >35th Aniversario</h1>
-    </div>
-    <div> 
-        <Navaniversario/>
-        <div class="ml-[20%] p-10 line-height-50 h-screen">
-           <Img20th/>
+        <div>
+         
         </div>
-        
-           </div>
+
+
+
+ <div >
+    <App client:load/>
+ </div>
+ 
+
+
     </main> 
 </Layout>
 

@@ -153,17 +153,12 @@ export const navbarOptionsani: NavbarOptionani[] = [
                     "https://res.cloudinary.com/di1hmzv5y/image/upload/v1703721557/ANIVERSARIOS/ANI-4%2842TH%29/IMG-20160807-WA0020_xore1z.jpg",
                 path: "/aniversarios/42th-aniversario",
             },
-            {
-                name: "43th Aniversario",
-                imageUrl:
-                    "https://res.cloudinary.com/di1hmzv5y/image/upload/v1703721622/ANIVERSARIOS/ANI-6%2850TH%29/WhatsApp_Image_2021-08-06_at_11.56.40_AM_gtuq7t.jpg",
-                path: "/aniversarios/43th-aniversario",
-            },
+         
             {
                 name: "50th Aniversario",
                 imageUrl:
                     "https://res.cloudinary.com/di1hmzv5y/image/upload/v1703721614/ANIVERSARIOS/ANI-6%2850TH%29/WhatsApp_Image_2021-08-08_at_8.54.16_PM_1_nrrtox.jpg",
-                path: "/aniversarios/50th-aniversario",
+                path: "/aniversarios/50th/50th-aniversario",
             },
         ],
     },
