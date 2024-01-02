@@ -7,15 +7,14 @@ import Navaniversario from "@/components/aniversario/navaniversario/nav.astro";
 
 <Layout title='20th Aniversario'>
     <main>
-        <div>
-             <Navaniversario/>
-        </div>
-
-
-
- <div >
-    <App client:load/>
- </div>
+        <div class="flex flex-col w-full h-full md:max-w-screen-lg">
+			<div>
+				<Navaniversario/>
+			</div>
+			<div >
+				<App client:load/>
+			</div>
+		</div>
  
 
 

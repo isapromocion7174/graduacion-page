@@ -93,7 +93,7 @@ const UserForm = ({ id = false }) => {
                             estadoCivil={userEdit.estadoCivil}
                             sexo={userEdit.sexo}
                         />
-                        <RoleSelect id={userEdit?.role?._id} />
+                        <RoleSelect id={userEdit?.rol?._id} />
                     </div>
 
                     <div className="w-full">

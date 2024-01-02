@@ -8,8 +8,7 @@ const index = ({ headers, data, deleteObject, messages, setId }) => {
     const token = useUserStore((state) => state.token);
     const [filter, setFilter] = useState(data);
     const formRef = useRef();
-    console.log(user, token);
-    const handleDelete = (id) => {
+    const handleDelete = async (id) => {
         if (user._id == id)
             return toast.error("No puedes eliminar tu propio usuario");
         if (user?.rol?._id == id)
@@ -22,13 +21,11 @@ const index = ({ headers, data, deleteObject, messages, setId }) => {
 
         if (!deleted) return;
 
-        const res = toast.promise(deleteObject(id, token), {
+        const res = await toast.promise(deleteObject(id, token), {
             pending: messages?.pending || "Eliminando objeto...",
             success: messages?.success || "Objeto eliminado",
             error: messages?.error || "Error al eliminar objeto",
         });
-
-        console.log(res);
 
         window.location.reload();
     };
