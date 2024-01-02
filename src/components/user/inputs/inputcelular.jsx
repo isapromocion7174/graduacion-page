@@ -82,7 +82,7 @@ const BanderaRDSvg = () => {
     );
 };
 
-const inputcelular = () => {
+const inputcelular = ({ number }) => {
     return (
         <>
             <div className="flex flex-col gap-2">
@@ -154,6 +154,7 @@ const inputcelular = () => {
                                 pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                                 placeholder="123-456-7890"
                                 name="telefonoCelular"
+                                defaultValue={number}
                                 required
                             />
                         </div>

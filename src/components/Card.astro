@@ -1,63 +1,43 @@
 ---
+import UserPlaceHolderImg from "@/assets/img/userPlaceHolder.jpg";
 interface Props {
 	title: string;
-	body: string;
+	body?: string;
 	href: string;
+	img?: string;
 }
 
-const { href, title, body } = Astro.props;
+const { href, title, body, img } = Astro.props;
 ---
 
-<li class="link-card">
-	<a href={href}>
-		<h2>
-
-			
-			{title}
-			<span>&rarr;</span>
-		</h2>
-		<p>
-			{body}
-		</p>
+<a href={href} class="bg-white rounded-2xl shadow-2xl transition-transform duration-300 ease-in-out transform hover:scale-105 relative border-gray-200 dark:bg-gray-800 dark:border-gray-700 container justify-between text-center max-w-80 pb-6  ">
+	<div
+		  class="
+		  flex flex-col items-center justify-center
+		  max-h-96
+		  gap-3
+		  w-full
+"
+	  >
+		  <div class="transform w-full overflow-hidden mb-3 rounded-t-2xl h-96 ">
+			  <img
+				  src={img || UserPlaceHolderImg.src}
+				  alt={title}
+				  class="object-cover object-center w-full h-full scale-105 transition-transform duration-300 ease-in-out transform hover:scale-105"
+			  />
+		  </div>
+		  <span class=" font-bold dark:text-white text-gray-800 text-xl mb-2">
+			  {title}
+		  </span>
+				  <p class="text-gray-700 dark:text-gray-300 text-base px-6 line-clamp-2 h-24 w-full
+				  ">
+					  {body || "No hay descripcion"}
+				  </p>
+		  <button class=" bg-blue-500 text-white px-4 py-2 rounded-md transition duration-300 ease-in-out transform hover:scale-105 hover:bg-blue-600 block mt-3  ">
+				  Ver mas
+			  </button>
+	   
+		 
+	  </div>
 	</a>
-</li>
-<style>
-	.link-card {
-		list-style: none;
-		display: flex;
-		padding: 1px;
-		background-color: #23262d;
-		background-image: none;
-		background-size: 400%;
-		border-radius: 7px;
-		background-position: 100%;
-		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
-	}
-	.link-card > a {
-		width: 100%;
-		text-decoration: none;
-		line-height: 1.4;
-		padding: calc(1.5rem - 1px);
-		border-radius: 8px;
-		color: white;
-		background-color: #23262d;
-		opacity: 0.8;
-	}
-	h2 {
-		margin: 0;
-		font-size: 1.25rem;
-		transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-	}
-	p {
-		margin-top: 0.5rem;
-		margin-bottom: 0;
-	}
-	.link-card:is(:hover, :focus-within) {
-		background-position: 0;
-		background-image: var(--accent-gradient);
-	}
-	.link-card:is(:hover, :focus-within) h2 {
-		color: rgb(var(--accent-light));
-	}
-</style>
+	

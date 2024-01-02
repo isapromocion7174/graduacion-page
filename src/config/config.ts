@@ -38,6 +38,10 @@ export const navbarOptions: NavbarOption[] = [
                 name: "Un dia tipico en ISA",
                 path: "/dia-tipico",
             },
+            {
+                name: "Resumen de vidas",
+                path: "/resumen-vidas",
+            },
         ],
     },
 
@@ -95,6 +99,10 @@ export const navbarOptions: NavbarOption[] = [
             {
                 name: "Eventos",
                 path: "/admin/eventos",
+            },
+            {
+                name: "Anecdotas",
+                path: "/admin/anecdotas",
             },
         ],
     },

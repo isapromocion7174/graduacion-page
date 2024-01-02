@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 
-const inputphoto = () => {
+const inputphoto = ({ src = false }) => {
     const fileInput = useRef();
     const imagePreview = useRef();
     function handleFileSelect() {
@@ -77,7 +77,15 @@ const inputphoto = () => {
                         ref={imagePreview}
                         id="imagePreview"
                         className="absolute inset-0"
-                    ></div>
+                    >
+                        {src && (
+                            <img
+                                src={src}
+                                alt="Vista previa de la imagen"
+                                class="w-full h-full object-cover rounded-lg"
+                            />
+                        )}
+                    </div>
                 </label>
             </div>
         </div>

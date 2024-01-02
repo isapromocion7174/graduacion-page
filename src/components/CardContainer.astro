@@ -1,0 +1,13 @@
+---
+
+const { className} = Astro.props
+---
+
+<div class=`grid grid-cols-1 gap-10 
+sm:grid-cols-1 sm:gap-10
+md:grid-cols-2 md:gap-10
+lg:grid-cols-3 lg:gap-10
+xl:grid-cols-3 xl:gap-10
+2xl:grid-cols-3 2xl:gap-10 ${className}`>
+        <slot />
+</div>
