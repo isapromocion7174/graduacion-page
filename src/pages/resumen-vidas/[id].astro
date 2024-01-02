@@ -1,0 +1,99 @@
+---
+import { getUser } from "@/api/users.js";
+import UserPlaceHolderImg from "@/assets/img/userPlaceHolder.jpg";
+
+const { id } = Astro.params;
+
+import Layout from "@/layouts/Layout.astro";
+
+const user = await getUser(id);
+user.edad = Math.floor(
+    (new Date() - new Date(user.fechaNacimiento).getTime()) / 3.15576e10
+);
+user.fechaNacimiento = new Date(user.fechaNacimiento).toLocaleDateString(
+    "es-ES",
+    { year: "numeric", month: "long", day: "numeric" }
+);
+console.log(user);
+---
+
+<Layout title={`Resumen de ${user.nombres} ${user.apellidos}`}>
+    <main class="pb-14 pt-14">
+        <div class="flex flex-col items-center justify-center gap-12 md:gap-24 p-10 border-2 border-gray-200 dark:border-gray-700 rounded-lg shadow-lg bg-gray-50 dark:bg-gray-800 max-w-screen-md mx-6">
+            <img
+                class="w-48 h-48 sm:w-60 sm:h-60 md:w-72 md:h-72 rounded-full shadow-lg object-cover"
+                src={user?.foto?.img_url || UserPlaceHolderImg.src}
+                alt={`${user?.nombres} ${user?.apellidos}`}
+            />
+            <ul class="dark:text-gray-100 grid grid-cols-1 gap-6 text-gray-700 text-sm sm:grid-cols-2 box-border">
+                <li class="text-2xl font-bold">
+                    <span class="text-gray-500">Nombre:</span>
+                    <span class="font-normal text-gray-900 dark:text-gray-100">{user?.nombres}</span>
+                </li>
+                <li class="text-2xl font-bold">
+                    <span class="text-gray-500">Apellido:</span>
+                    <span class="font-normal text-gray-900 dark:text-gray-100">{user?.apellidos}</span>
+                </li>
+                <li class="text-2xl font-bold">
+                    <span class="text-gray-500">Correo:</span>
+                    <span class="font-normal text-gray-900 dark:text-gray-100">{user?.correo}</span>
+                </li>
+                <li class="text-2xl font-bold">
+                    <span class="text-gray-500">Edad:</span>
+                    <span class="font-normal text-gray-900 dark:text-gray-100">{user?.edad}</span>
+                </li>
+                <li class="text-2xl font-bold">
+                    <span class="text-gray-500">Ultimo Grado Estudio:</span>
+                    <span class="font-normal text-gray-900 dark:text-gray-100">{user?.ultimoGradoEstudio}</span>
+                </li>
+                <li class="text-2xl font-bold">
+                    <span class="text-gray-500">Fecha de Nacimiento:</span>
+                    <span class="font-normal text-gray-900 dark:text-gray-100">{user?.fechaNacimiento}</span>
+                </li>
+                <li class="text-2xl font-bold">
+                    <span class="text-gray-500">Sexo:</span>
+                    <span class="font-normal text-gray-900 dark:text-gray-100">{user?.sexo}</span>
+                </li>
+                <li class="text-2xl font-bold">
+                    <span class="text-gray-500">Cantidad Hijos:</span>
+                    <span class="font-normal text-gray-900 dark:text-gray-100">{user?.cantidadHijos}</span>
+                </li>
+
+                <li class="text-2xl font-bold">
+                    <span class="text-gray-500">Teléfono Casa:</span>
+                    <span class="font-normal text-gray-900 dark:text-gray-100">{user?.telefonoCasa}</span>
+                </li>
+                <li class="text-2xl font-bold">
+                    <span class="text-gray-500">Celular:</span>
+                    <span class="font-normal text-gray-900 dark:text-gray-100">{user?.telefonoCelular}</span>
+                </li>
+                <li class="text-2xl font-bold">
+                    <span class="text-gray-500">Dirección:</span>
+                    <span class="font-normal text-gray-900 dark:text-gray-100">{user?.direccion}</span>
+                </li>
+                <li class="text-2xl font-bold">
+                    <span class="text-gray-500">Estado Civil:</span>
+                    <span class="font-normal text-gray-900 dark:text-gray-100">{user?.estadoCivil}</span>
+                </li>
+                <li class="text-2xl font-bold">
+                    <span class="text-gray-500">Ocupación:</span>
+                    <span class="font-normal text-gray-900 dark:text-gray-100">{user?.descripcion || "Sin registrar"}</span>
+                </li>
+            </ul>
+        </div>
+    </main>
+    
+</Layout>
+
+<style>
+    main {
+        flex: 1;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        overflow-y: auto;
+    }
+</style>

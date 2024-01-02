@@ -1,0 +1,47 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Card from "@/components/Card.astro";
+import CardContainer from "@/components/CardContainer.astro";
+import {getUsers} from '@/api/users.js';
+
+const users = await getUsers();
+
+console.log(users);
+---
+
+<Layout title="Resumenes de vida">
+    <main >
+        <h1
+            class=" mt-8 text-4xl font-bold text-center text-gray-800 dark:text-gray-100"
+        > Miembros </h1>
+        <CardContainer className="" >
+
+            {
+                users.map((user) => (
+                    <Card 
+                    title={user.nombres + " " + user.apellidos} 
+                    img={user?.foto?.img_url}
+                    href={`/resumen-vidas/${user._id}`}
+                    body={user.descripcion}
+                      />
+                ))
+            }
+        </CardContainer>
+    </main>
+</Layout>
+
+
+<style>
+    main {
+        flex: 1;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        overflow-y: auto;
+        gap: 2rem;
+    }
+    
+</style>

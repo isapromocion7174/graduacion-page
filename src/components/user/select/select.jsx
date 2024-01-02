@@ -1,6 +1,6 @@
 import React from "react";
 
-const select = () => {
+const select = ({ sexo, estadoCivil }) => {
     return (
         <>
             <div>
@@ -13,12 +13,13 @@ const select = () => {
                 <select
                     id="sexo"
                     name="sexo"
+                    defaultValue={sexo}
                     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     onChange="handleGenderChange(this)"
                 >
-                    <option value="masculino">Masculino</option>
-                    <option value="femenino">Femenino</option>
-                    <option value="otro">Otro</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Femenino">Femenino</option>
+                    <option value="Otro">Otro</option>
                 </select>
             </div>
             <div>
@@ -31,15 +32,18 @@ const select = () => {
                 <select
                     id="estadoCivil"
                     name="estadoCivil"
+                    defaultValue={estadoCivil}
                     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     onChange="handleGenderChange(this)"
                 >
-                    <option value="masculino">Soltero/a</option>
-                    <option value="femenino">Casado/a</option>
-                    <option value="otro">Unión libre o unión de hecho.</option>\
-                    <option value="femenino">Separado/a</option>
-                    <option value="femenino">Divorciado/a</option>
-                    <option value="femenino">Viudo/a</option>
+                    <option value="Soltero/a">Soltero/a</option>
+                    <option value="Casado/a">Casado/a</option>
+                    <option value="Union Libre">
+                        Unión libre o unión de hecho.
+                    </option>
+                    <option value="Separado/a">Separado/a</option>
+                    <option value="Divorciado/a">Divorciado/a</option>
+                    <option value="Viudo/a">Viudo/a</option>
                 </select>
             </div>
         </>

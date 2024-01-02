@@ -1,22 +1,54 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import Userinput  from "../../components/user/index";
+import Userinput  from "@/components/user/index";
+import MantenanceLayout from '@/components/user/MantenanceLayout'
+import { deleteUser } from "@/api/users";
+const headers = [
+    { name: "IMG", key: 'img_url'},
+    { name: 'Nombres', key: 'nombres' },
+    { name: 'Apellidos', key: 'apellidos' },
+    { name: 'Email', key: 'correo' },
+    { name: 'Rol', key: 'rol' }
+]
+
+const messages = {
+    delete: "¿Está seguro que desea eliminar este usuario?",
+    pending: "Eliminando usuario...",
+    success: "Usuario eliminado correctamente",
+    error: "Error al eliminar el usuario"
+}
+
+import { getUsers } from '@/api/users';
+
+const users = await getUsers();
+
+console.log(users);
+
+const usersData = users.map((user) => {
+    return {
+        id: user._id,
+        img_url: user?.foto?.img_url,
+        nombres: user.nombres,
+        apellidos: user.apellidos,
+        correo: user.correo,
+        rol: user.rol.nombre,
+    }
+})
+
+
 ---
 
 <Layout title='Mantenimiento Usuario'>
     <main>
-    <div 
-        class="flex flex-col items-center justify-center w-full h-32"
-    >
-        <h1
-            class="text-3xl text-center text-gray-700 font-bold leading-8 mt-10
-                dark:text-gray-100 sm:text-4xl sm:leading-10
-            "
-        >Mantenimiento de Usuario</h1>
-    </div>
-    <div>
-        <Userinput client:load />
-    </div>
+        <MantenanceLayout 
+            title="Mantenimiento de Usuario"
+            headers={headers}
+            data={usersData}
+            deleteObject={deleteUser}
+            messages={messages}
+            client:load
+            />
+    
     </main> 
 </Layout>
 
@@ -34,5 +66,11 @@ import Userinput  from "../../components/user/index";
         overflow-y: auto;;
 	}
 
+    dialog{
+        overflow-y: auto;
+    }
 
+    dialog::backdrop {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
 </style>

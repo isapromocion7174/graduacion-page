@@ -1,6 +1,8 @@
 ---
 import Navbar from '@/components/Navbar/index.jsx'
 import VerifyLogin from '@/components/Login/VerifyLogin'
+import {ToastContainer} from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 interface Props {
 	title: string;
 }
@@ -45,6 +47,19 @@ const { title } = Astro.props;
             <Navbar client:visible transition:persist transition:name="navbar"/>
             <slot />
         </main>
+		<ToastContainer
+			position="bottom-right"
+			autoClose={3000}
+			hideProgressBar={false}
+			newestOnTop={false}
+			closeOnClick
+			rtl={false}
+			pauseOnFocusLoss
+			draggable
+			pauseOnHover
+			theme="dark"
+			client:visible transition:persist
+		/>
 	</body>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
 </html>

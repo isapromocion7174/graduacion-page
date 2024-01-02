@@ -1,5 +1,4 @@
 import { API_URL } from "@/config/config";
-import { useUserStore } from "@/stores/userStore";
 
 export const getUsers = async (query) => {
     const response = await fetch(`${API_URL}/user`, {
@@ -37,14 +36,13 @@ export const createUser = async (form, token) => {
     return data;
 };
 
-export const updateUser = async (id, query, token) => {
+export const updateUser = async (id, form, token) => {
     const response = await fetch(`${API_URL}/user/${id}`, {
         method: "PUT",
         headers: {
-            "Content-Type": "application/json",
             "x-token": token,
         },
-        body: JSON.stringify(query),
+        body: form,
     });
     const data = await response.json();
     return data;
@@ -84,5 +82,17 @@ export const login = async (correo, password) => {
     if (data.mensaje) {
         throw new Error(data.mensaje);
     }
+    return data;
+};
+
+export const deleteUser = async (id, token) => {
+    const response = await fetch(`${API_URL}/user/${id}`, {
+        method: "DELETE",
+        headers: {
+            "Content-Type": "application/json",
+            "x-token": token,
+        },
+    });
+    const data = await response.json();
     return data;
 };
