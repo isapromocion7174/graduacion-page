@@ -19,8 +19,8 @@ function text() {
                   <div className="mb-1">
                     <a
                       href={dropDownOption50thnav.irimg}
-                      className="inline-flex rounded-lg border bg-white dark:bg-gray-600 dark:border-none px-4 py-2 text-center text-sm font-semibold text-gray-500 dark:text-gray-200 outline-none ring-indigo-300 hover:bg-gray-700 focus-visible:ring active:bg-gray-900 md:px-8 md:py-3 md:text-base lg:px-10  lg:text-lg"
-                    >
+                      className="inline-flex rounded-lg border bg-white dark:bg-gray-600 dark:hover:bg-gray-700 dark:active:bg-gray-900 dark:border-none px-4 py-2 text-center text-sm font-semibold text-gray-500 dark:text-gray-200 outline-none ring-indigo-300 hover:bg-zinc-100 focus-visible:ring active:bg-gray-300 md:px-8 md:py-3 md:text-base"
+                      >
                       Ver imágenes
                      
                     </a>
@@ -28,16 +28,16 @@ function text() {
                   <div className="mb-1">
                     <a
                       href={dropDownOption50thnav.regresar}
-                      className="inline-flex rounded-lg border bg-white dark:bg-gray-600 dark:border-none px-4 py-2 text-center text-sm font-semibold text-gray-500 dark:text-gray-200 outline-none ring-indigo-300 hover:bg-gray-700 focus-visible:ring active:bg-gray-900 md:px-8 md:py-3 md:text-base lg:px-10  lg:text-lg"
-                    >
+                      className="inline-flex rounded-lg border bg-white dark:bg-gray-600 dark:hover:bg-gray-700 dark:active:bg-gray-900 dark:border-none px-4 py-2 text-center text-sm font-semibold text-gray-500 dark:text-gray-200 outline-none ring-indigo-300 hover:bg-zinc-100 focus-visible:ring active:bg-gray-300 md:px-8 md:py-3 md:text-base"
+                      >
                       Aniversarios
                     </a>
                   </div>
                   <div className="mb-1">
                     <a
                            href={dropDownOption50thnav.irvideo}
-                      className="inline-flex rounded-lg border bg-white dark:bg-gray-600 dark:border-none px-4 py-2 text-center text-sm font-semibold text-gray-500 dark:text-gray-200 outline-none ring-indigo-300 hover:bg-gray-700 focus-visible:ring active:bg-gray-900 md:px-8 md:py-3 md:text-base lg:px-10  lg:text-lg"
-                    >
+                           className="inline-flex rounded-lg border bg-white dark:bg-gray-600 dark:hover:bg-gray-700 dark:active:bg-gray-900 dark:border-none px-4 py-2 text-center text-sm font-semibold text-gray-500 dark:text-gray-200 outline-none ring-indigo-300 hover:bg-zinc-100 focus-visible:ring active:bg-gray-300 md:px-8 md:py-3 md:text-base"
+                           >
                       Ver videos
                       
                     </a>

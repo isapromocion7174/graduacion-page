@@ -48,8 +48,8 @@ const Img = () => {
                 <div className="mb-1">
                   <a
                     href={dropDownOption50th.aniversario}
-                    className="inline-flex rounded-lg border bg-white dark:bg-gray-600 dark:border-none px-4 py-2 text-center text-sm font-semibold text-gray-500 dark:text-gray-200 outline-none ring-indigo-300 hover:bg-gray-700 focus-visible:ring active:bg-gray-900 md:px-8 md:py-3 md:text-base"
-                  >
+                    className="inline-flex rounded-lg border bg-white dark:bg-gray-600 dark:hover:bg-gray-700 dark:active:bg-gray-900 dark:border-none px-4 py-2 text-center text-sm font-semibold text-gray-500 dark:text-gray-200 outline-none ring-indigo-300 hover:bg-zinc-100 focus-visible:ring active:bg-gray-300 md:px-8 md:py-3 md:text-base"
+                    >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -71,8 +71,8 @@ const Img = () => {
                   <div className="mb-1">
                   <a
                     href={dropDownOption50th.regresar}
-                    className="inline-flex rounded-lg border bg-white dark:bg-gray-600 dark:border-none px-4 py-2 text-center text-sm font-semibold text-gray-500 dark:text-gray-200 outline-none ring-indigo-300 hover:bg-gray-700 focus-visible:ring active:bg-gray-900 md:px-8 md:py-3 md:text-base"
-                  >
+                    className="inline-flex rounded-lg border bg-white dark:bg-gray-600 dark:hover:bg-gray-700 dark:active:bg-gray-900 dark:border-none px-4 py-2 text-center text-sm font-semibold text-gray-500 dark:text-gray-200 outline-none ring-indigo-300 hover:bg-zinc-100 focus-visible:ring active:bg-gray-300 md:px-8 md:py-3 md:text-base"
+                    >
                   
                     Volver aniversarios
                   </a>
