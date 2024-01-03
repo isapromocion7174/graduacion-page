@@ -74,11 +74,6 @@ export const navbarOptions: NavbarOption[] = [
                 name: "Programas de Graduacion",
                 path: "/programas-graduacion",
             },
-
-            {
-                name: "Otros",
-                path: "/otros",
-            },
         ],
     },
     {

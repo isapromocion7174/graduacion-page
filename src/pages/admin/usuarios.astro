@@ -3,9 +3,6 @@ import Layout from '../../layouts/Layout.astro';
 import Userinput  from "@/components/user/index";
 import MantenanceLayout from '@/components/user/MantenanceLayout'
 
-const objXample = {
-    
-}
 
 const messages = {
     delete: "¿Está seguro que desea eliminar este usuario?",
@@ -19,7 +16,6 @@ import { getUsers } from '@/api/users';
 const users = await getUsers();
 
 
-console.log(users);
 
 const headers = [
     
@@ -47,7 +43,7 @@ const usersData = users.map((user) => {
 
 ---
 
-<Layout title='Mantenimiento Usuario'>
+<Layout title='Usuarios - Admin'>
     <main>
         <MantenanceLayout 
             title="Mantenimiento de Usuario"

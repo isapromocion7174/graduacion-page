@@ -1,0 +1,88 @@
+---
+import { getEvento } from "@/api/eventos";
+import UserPlaceHolderImg from "@/assets/img/userPlaceHolder.jpg";
+
+const { id } = Astro.params;
+
+import Layout from "@/layouts/Layout.astro";
+
+const evento = await getEvento(id);
+
+const formatDate = (date) => {
+    const d = new Date(date);
+    return d.toLocaleDateString(
+        "es-ES",
+        {    year: "numeric", month: "long", day: "numeric" }
+    );
+}
+
+const formatHora = (date) => {
+    const fecha = new Date(date);
+    // Conviertela a hora local (UTC-4)
+    return fecha.toLocaleTimeString('es-ES',{
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: true,
+    });
+}
+console.log(evento);
+---
+
+<Layout title={`Evento - ${evento.nombreEvento} - ${evento.lugar}`}>
+    <main class="pb-14 pt-14">
+        <div class="flex flex-col items-center justify-center gap-12 p-10 border-2 border-gray-200 dark:border-gray-700 rounded-lg shadow-lg bg-gray-50 dark:bg-gray-800 max-w-screen-md mx-6">
+           
+            <h1
+                class="md:text-4xl font-bold text-center text-gray-900 dark:text-gray-100
+                    text-2xl o
+                "
+            >{evento.nombreEvento}</h1>
+            <img
+            class="w-full shadow-lg object-cover rounded-lg"
+            src={evento?.foto?.img_url || UserPlaceHolderImg.src}
+            alt={`${evento?.nombreEvento}`}
+        />
+            <ul class="dark:text-gray-100 grid grid-cols-1 gap-6 text-gray-700 text-sm sm:grid-cols-2 box-border">
+                <li class="text-2xl font-bold">
+                    <span class="text-gray-500">Inicio:</span>
+                    <span class="font-normal text-gray-900 dark:text-gray-100">{formatDate(evento?.fechaInicio)}</span>
+                </li>
+                <li class="text-2xl font-bold">
+                    <span class="text-gray-500">Fin:</span>
+                    <span class="font-normal text-gray-900 dark:text-gray-100">{formatDate(evento?.fechaFinal)}</span>
+                </li>
+                <li class="text-2xl font-bold">
+                    <span class="text-gray-500">Lugar:</span>
+                    <span class="font-normal text-gray-900 dark:text-gray-100">{evento?.lugar}</span>
+                </li>
+                <li class="text-2xl font-bold">
+                    <span class="text-gray-500">Hora Inicio:</span>
+                    <span class="font-normal text-gray-900 dark:text-gray-100">{formatHora(evento?.fechaInicio)}</span>
+                </li>
+                <li class="text-2xl font-bold">
+                    <span class="text-gray-500">Hora Fin:</span>
+                    <span class="font-normal text-gray-900 dark:text-gray-100">{formatHora(evento?.fechaFinal)}</span>
+                </li>
+                <li class="text-2xl font-bold">
+                    <span class="text-gray-500">Direccion:</span>
+                    <span class="font-normal text-gray-900 dark:text-gray-100">{evento?.direccion}</span>
+                </li>
+               
+            </ul>
+        </div>
+    </main>
+    
+</Layout>
+
+<style>
+    main {
+        flex: 1;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        overflow-y: auto;
+    }
+</style>

@@ -1,14 +1,15 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 
-const headers = [
-	
-    { name: "Titulo", key: 'titulo'},
-	{ name: "Usuario", key: 'usuario'},
-	{ name: "Ultima Modificación", key: 'updatedAt'},
-]
+
 
 import MantenanceLayout from '@/components/Mantenances/Anecdotas/MantenanceLayout'
+
+
+
+import { getAnecdotas} from '@/api/anectodas';
+
+const anecdotas = await getAnecdotas();
 
 const messages = {
     delete: "¿Está seguro que desea eliminar esta anecdota?",
@@ -17,12 +18,12 @@ const messages = {
     error: "Error al eliminar la anecdota"
 }
 
-import { getAnecdotas, deleteAnecdota} from '@/api/anectodas';
-
-const anecdotas = await getAnecdotas();
-
-console.log(anecdotas);
-
+const headers = [
+	
+    { name: "Titulo", key: 'titulo'},
+	{ name: "Usuario", key: 'usuario'},
+	{ name: "Ultima Modificación", key: 'updatedAt'},
+]
 const anecdotaData = anecdotas.map((anecdota) => {
     return {
         id: anecdota._id,
@@ -35,7 +36,7 @@ const anecdotaData = anecdotas.map((anecdota) => {
 })
 ---
 
-<Layout title="admin - Anecdotas">
+<Layout title="Anecdotas - Admin">
     <main>
 			<MantenanceLayout 
 				title="Mantenimiento de Anecdotas"

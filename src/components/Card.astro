@@ -29,10 +29,17 @@ const { href, title, body, img } = Astro.props;
 		  <span class=" font-bold dark:text-white text-gray-800 text-xl mb-2">
 			  {title}
 		  </span>
-				  <p class="text-gray-700 dark:text-gray-300 text-base px-6 line-clamp-2 h-24 w-full
-				  ">
-					  {body || "No hay descripcion"}
-				  </p>
+		  		
+			{body && (
+				<p
+					class="text-gray-700 dark:text-gray-300 text-base px-6 line-clamp-2 h-24 w-full
+					"
+				>
+					{body}
+				</p>
+			)}
+
+				  <slot/>
 		  <button class=" bg-blue-500 text-white px-4 py-2 rounded-md transition duration-300 ease-in-out transform hover:scale-105 hover:bg-blue-600 block mt-3  ">
 				  Ver mas
 			  </button>
