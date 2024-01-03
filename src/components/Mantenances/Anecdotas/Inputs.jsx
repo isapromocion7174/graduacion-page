@@ -97,7 +97,7 @@ const AnectodasForm = ({ id = false }) => {
                         <UsersSelect id={objEdit?.usuario?._id} />
                     </div>
 
-                    <div className="w-full md:min-h-96 flex flex-col">
+                    <div className="w-full md:min-h-96 flex flex-col dark:text-gray-100">
                         <Quill state={quillValue} setState={setQuillValue} />
                     </div>
 

@@ -6,18 +6,19 @@ const ModaText = ({ anecdota }) => {
             <dialog id={anecdota?.titulo} class="rounded-lg">
                 <form
                     method="dialog"
-                    class="flex flex-col justify-center items-center w-full h-full rounded-lg max-w-screen-lg 
+                    class="flex flex-col justify-center items-center w-full p-6 min-w-96 min-h-96 md:p-6 h-full rounded-lg max-w-screen-lg shadow-lg dark:bg-gray-800 dark:text-gray-100 bg-white
                     "
                 >
                     <div
-                        class=" bg-white rounded-lg shadow-lg p-12 md:p-6 w-full min-h-96 flex flex-col
-                        dark:bg-gray-800 dark:text-gray-100 min-w-96
+                        class="   w-full flex flex-col
+                            flex-1 text-pretty
+
                     "
                     >
                         <h2 class="text-xl font-bold mb-2">
                             {anecdota?.titulo}
                         </h2>
-                        <div class="flex-1 overflow-y-hidden text-pretty text-ellipsis">
+                        <div class="flex-1 overflow-y-hidden text-pretty text-ellipsis w-full">
                             <StringToHTML html={anecdota?.descripcion || ""} />
                         </div>
                         <div class="w-full flex flex-col gap-4 mt-8">

@@ -2,9 +2,10 @@
 import Layout from "@/layouts/Layout.astro";
 
 const headers = [
-	{ name: "ID", key: 'id'},
+	
     { name: "Titulo", key: 'titulo'},
-	{ name: "Usuario", key: 'usuario'}
+	{ name: "Usuario", key: 'usuario'},
+	{ name: "Ultima Modificación", key: 'updatedAt'},
 ]
 
 import MantenanceLayout from '@/components/Mantenances/Anecdotas/MantenanceLayout'
@@ -27,6 +28,9 @@ const anecdotaData = anecdotas.map((anecdota) => {
         id: anecdota._id,
 		titulo: anecdota.titulo,
         usuario: anecdota.usuario.nombres + ' ' + anecdota.usuario.apellidos,
+		updatedAt: new Date(anecdota.updatedAt).toLocaleDateString(
+    				"es-ES",
+    				{ year: "numeric", month: "long", day: "numeric" })
     }
 })
 ---

@@ -2,14 +2,10 @@
 import Layout from '../../layouts/Layout.astro';
 import Userinput  from "@/components/user/index";
 import MantenanceLayout from '@/components/user/MantenanceLayout'
-const headers = [
-    { name: "IMG", key: 'img_url'},
-    { name: 'Nombres', key: 'nombres' },
-    { name: 'Apellidos', key: 'apellidos' },
-    { name: 'Email', key: 'correo' },
-    { name: 'Rol', key: 'rol' },
-    { name: 'Sexo', key: 'sexo' },
-]
+
+const objXample = {
+    
+}
 
 const messages = {
     delete: "¿Está seguro que desea eliminar este usuario?",
@@ -22,7 +18,19 @@ import { getUsers } from '@/api/users';
 
 const users = await getUsers();
 
+
 console.log(users);
+
+const headers = [
+    
+    { name: "IMG", key: 'img_url'},
+    { name: 'Nombres', key: 'nombres' },
+    { name: 'Apellidos', key: 'apellidos' },
+    { name: 'Email', key: 'correo' },
+    { name: 'Rol', key: 'rol' },
+    { name: 'Sexo', key: 'sexo' },
+]
+
 
 const usersData = users.map((user) => {
     return {

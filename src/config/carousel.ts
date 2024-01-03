@@ -20,15 +20,16 @@ export const carouselItems = [
         image: "https://res.cloudinary.com/di1hmzv5y/image/upload/v1703721614/ANIVERSARIOS/ANI-6%2850TH%29/WhatsApp_Image_2021-08-08_at_8.54.16_PM_1_nrrtox.jpg",
         link: "/aniversarios",
         active: "active",
-        background: InstitutoIMG.src,
+        background:
+            "https://res.cloudinary.com/di1hmzv5y/image/upload/v1703721622/ANIVERSARIOS/ANI-6%2850TH%29/WhatsApp_Image_2021-08-06_at_11.56.40_AM_gtuq7t.jpg",
     },
     {
         title: "Encuentros",
         description:
             "¡Participa en nuestra sección de encuentros y eventos! Comparte la emoción de reunirnos nuevamente, revive momentos especiales y crea nuevos recuerdos. ",
-        image: EventoIMG.src,
+        image: "https://res.cloudinary.com/di1hmzv5y/image/upload/v1703721604/ANIVERSARIOS/ANI-6%2850TH%29/WhatsApp_Image_2021-08-08_at_8.52.16_PM_1_boe5wg.jpg",
         link: "/encuentros",
-        background: AmigosIMG.src,
+        background: InstitutoIMG.src,
     },
     {
         title: "Grupos de ISA",
