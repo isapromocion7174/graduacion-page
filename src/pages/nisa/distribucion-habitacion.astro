@@ -1,19 +1,23 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import App from "@/components/aniversario/20th/img";
+
+
+import App from "../../components/ISA/distribucion/navcard/navcar.jsx";
 
 ---
 
-<Layout title='20th Aniversario'>
-    <main >
-		<div class="flex flex-col w-full h-full md:max-w-screen-lg">
-			<div>
-			
-			</div>
-			<div >
-				<App  client:load/>
-			</div>
-		</div>
+<Layout title='20th Aniversario' >
+    <main>
+        <div>
+         
+        </div>
+
+
+
+ <div >
+	<App client:load/>
+ </div>
+ 
 
 
     </main> 
@@ -33,5 +37,3 @@ import App from "@/components/aniversario/20th/img";
         overflow-y: auto;
 	}
 
-
-</style>

@@ -24,15 +24,15 @@ export const navbarOptions: NavbarOption[] = [
         dropDownOptions: [
             {
                 name: "Nuestro ISA",
-                path: "/nuestro-isa",
+                path: "/nisa/nuestro-isa",
             },
             {
                 name: "Carta de Aceptación",
-                path: "/carta-aceptacion",
+                path: "/nisa/carta-aceptacion",
             },
             {
                 name: "Distribucion por habitacion",
-                path: "/distribucion-habitacion",
+                path: "/nisa/distribucion-habitacion",
             },
             {
                 name: "Un dia tipico en ISA",
@@ -163,6 +163,15 @@ export const navbarOptionsani: NavbarOptionani[] = [
         ],
     },
 ];
+
+
+
+export const nisa =
+ {
+   img:"https://res.cloudinary.com/di1hmzv5y/image/upload/v1704171755/Nuestro%20isa/Captura_cbfyzd.png",
+    carta:"https://res.cloudinary.com/di1hmzv5y/image/upload/v1704173116/Nuestro%20isa/INI-2_tlokdq.jpg"
+};
+
 
 export const API_URL =
     import.meta.env.PUBLIC_API_URL || "http://localhost:3000";
