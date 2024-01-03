@@ -31,11 +31,11 @@ export const navbarOptions: NavbarOption[] = [
                 path: "/carta-aceptacion",
             },
             {
-                name: "Distribucion por habitacion",
+                name: "Distribución por habitación",
                 path: "/distribucion-habitacion",
             },
             {
-                name: "Un dia tipico en ISA",
+                name: "Un día tipico en ISA",
                 path: "/dia-tipico",
             },
             {
@@ -71,7 +71,7 @@ export const navbarOptions: NavbarOption[] = [
                 path: "/anecdotas-jocosidades",
             },
             {
-                name: "Programas de Graduacion",
+                name: "Programas de Graduación",
                 path: "/programas-graduacion",
             },
         ],
