@@ -1,4 +1,4 @@
-export const Deportivas: string[] = [
+export const deportivasImages: string[] = [
     "https://res.cloudinary.com/di1hmzv5y/image/upload/v1704250834/deportibas/280261_259280770764800_5787729_o_t7sy5v.jpg  ",
     " https://res.cloudinary.com/di1hmzv5y/image/upload/v1704250834/deportibas/280549_259279190764958_6299071_o_1_jkvvpb.jpg ",
     "https://res.cloudinary.com/di1hmzv5y/image/upload/v1704250833/deportibas/280549_259279190764958_6299071_o_ntk6fb.jpg  ",
@@ -16,12 +16,4 @@ export const Deportivas: string[] = [
     "https://res.cloudinary.com/di1hmzv5y/image/upload/v1704250810/deportibas/272642_259279700764907_8273859_o_y0970g.jpg  ",
     "https://res.cloudinary.com/di1hmzv5y/image/upload/v1704250810/deportibas/273032_259279024098308_7343318_o_fwztqh.jpg  ",
     "https://res.cloudinary.com/di1hmzv5y/image/upload/v1704250807/deportibas/272023_259279100764967_2197688_o_cl2wr5.jpg  ",
-
-
-
 ];
-
-export const deportivas = {
-
-    images: Deportivas,
-};

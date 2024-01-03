@@ -1,0 +1,78 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Card from '@/components/Card.astro'
+import CardContainer from "@/components/CardContainer.astro";
+import {getEventos} from '@/api/eventos';
+
+const eventos = await getEventos();
+
+console.log(eventos);
+
+const formatDate = (date) => {
+    const fecha = new Date(date);
+
+    return fecha.toLocaleDateString('es-ES',{
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+    });
+}
+
+const formatHora = (date) => {
+    const fecha = new Date(date);
+    // Conviertela a hora local (UTC-4)
+    return fecha.toLocaleTimeString('es-ES',{
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: true,
+    });
+}
+---
+
+<Layout title="Eventos">
+    <main >
+        <h1
+            class=" mt-8 text-4xl font-bold text-center text-gray-800 dark:text-gray-100"
+        > Encuentros </h1>
+        <CardContainer className="" >
+
+            {
+                eventos.map((evento) => (
+                    <Card 
+                    title={evento.nombreEvento} 
+                    img={evento?.foto?.img_url}
+                    href={`/encuentros/${evento._id}`}
+                      > 
+                            <div class="flex flex-col text-gray-800
+                            dark:text-gray-100 w-full gap-4 items-start px-8
+                            h-full
+                            ">  
+                                <p class="truncate"><strong> Fecha:</strong> {formatDate(evento.fechaInicio)} - {formatDate(evento.fechaFinal)} </p>
+                                    
+                                    <p class="truncate"><strong> Lugar:</strong> {evento.lugar}</p>
+                                    <p><strong> Horario:</strong> {formatHora(evento.fechaInicio)} - {formatHora(evento.fechaFinal)}</p>
+                            </div>
+                      
+                      
+                      </Card>
+                ))
+            }
+        </CardContainer>
+    </main>
+</Layout>
+
+
+<style>
+    main {
+        flex: 1;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        overflow-y: auto;
+        gap: 2rem;
+    }
+    
+</style>

@@ -2,24 +2,15 @@
 import Layout from '@/layouts/Layout.astro';
 
 
-import App from "@/components/ISA/distribucion/navcard/navcar";
+import App from "@/components/ISA/distribucion/CardsDistribucion";
 
 ---
 
-<Layout title='20th Aniversario' >
+<Layout title='Distribución por Habitación' >
     <main>
-        <div>
-         
-        </div>
-
-
-
- <div >
-	<App client:load/>
- </div>
- 
-
-
+		<div class="mt-6" >
+			<App client:load/>
+		</div>
     </main> 
 </Layout>
 
@@ -38,4 +29,3 @@ import App from "@/components/ISA/distribucion/navcard/navcar";
 	}
 
 </style>
-

@@ -22,7 +22,7 @@ console.log(users);
                     title={user.nombres + " " + user.apellidos} 
                     img={user?.foto?.img_url}
                     href={`/resumen-vidas/${user._id}`}
-                    body={user.descripcion}
+                    body={user.descripcion || "No hay descripción"}
                       />
                 ))
             }

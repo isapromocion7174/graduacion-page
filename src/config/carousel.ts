@@ -32,19 +32,20 @@ export const carouselItems = [
         background: InstitutoIMG.src,
     },
     {
-        title: "Grupos de ISA",
+        title: "Miembros",
         description:
-            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis sed sunt molestiae adipisci cumque vero quos possimus eum deleniti, laboriosam dolor! Suscipit in consectetur provident dolore eligendi sed eum numquam.",
-        image: GrupoIMG.src,
-        link: "/grupos",
-        background: GrupoIMG.src,
+            "Explora la diversidad y la riqueza de historias que conforman nuestra comunidad. Conoce a cada miembro, sus experiencias únicas, y descubre sus trayectorias de vida. ",
+        image: "https://res.cloudinary.com/di1hmzv5y/image/upload/v1703721534/ANIVERSARIOS/ANI-3%2835TH%29/Imagen11_xb3u84.jpg",
+        link: "/resumen-vidas",
+        background:
+            "https://res.cloudinary.com/di1hmzv5y/image/upload/v1703721566/ANIVERSARIOS/ANI-4%2842TH%29/IMG-20160808-WA0001_efjkrg.jpg",
     },
     {
         title: "Instituto de ISA",
         description:
-            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis sed sunt molestiae adipisci cumque vero quos possimus eum deleniti, laboriosam dolor! Suscipit in consectetur provident dolore eligendi sed eum numquam.",
-        image: AmigosIMG.src,
-        link: "/instituto",
+            "El Instituto Superior de Agricultura (ISA), originalmente un centro de educación vocacional agrícola, fue creado en virtud a un acuerdo entre la Asociación para el Desarrollo Inc., el Estado Dominicano y la Misión en el país de la AID.",
+        image: "https://isa.edu.do/_next/image?url=https://app.isa.edu.do/wp-content/uploads/2021/05/cover-2.jpg&w=1920&q=75",
+        link: "/nuestro-isa",
         background: InstitutoIMG.src,
     },
 ];

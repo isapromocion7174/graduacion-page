@@ -1,20 +1,66 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import EventInput from "../../components/event/index.jsx";
+import MantenanceLayout from '@/components/event/MantenanceLayout'
+
+
+import { getEventos} from '@/api/eventos';
+
+const eventos = await getEventos();
+
+
+const messages = {
+    delete: "¿Está seguro que desea eliminar este evento?",
+    pending: "Eliminando evento...",
+    success: "Evento eliminado correctamente",
+    error: "Error al eliminar el evento"
+}
+
+const headers = [
+    { name: "Titulo", key: 'nombreEvento'},
+	{ name: "Inicio", key: 'inicio'},
+    { name: "Fin", key: 'fin'},
+    { name: "Horario", key: 'horario'},
+    { name: "Lugar", key: 'lugar'}
+]
+
+const formatDate = (date) => {
+    const d = new Date(date);
+    return d.toLocaleDateString(
+        "es-ES",
+        { year: "numeric", month: "long", day: "numeric" }
+    )
+}
+
+const formatTime = (date) => {
+    const d = new Date(date);
+    return d.toLocaleTimeString(
+        "es-ES",
+        { hour: "numeric", minute: "numeric" }
+    )
+}
+const eventoData = eventos.map((evento) => {
+    return {
+        id: evento._id,
+        nombreEvento: evento.nombreEvento,
+		inicio: formatDate(evento.fechaInicio) ,
+        fin: formatDate(evento.fechaFinal),
+        horario: `${formatTime(evento.fechaInicio)} - ${formatTime(evento.fechaFinal)}`,
+        lugar: evento.lugar
+    }
+})
+
 ---
 
-<Layout title="Mantenimiento Eventos">
+<Layout title="Eventos - Admin">
     <main>
-        <div class="flex flex-col items-center justify-center w-full h-32">
-            <h1
-                class="text-3xl text-center text-gray-700 font-bold leading-8 mt-10 dark:text-gray-100 sm:text-4xl sm:leading-10"
-            >
-                Mantenimiento de Eventos
-            </h1>
-        </div>
-        <div>
-            <EventInput />
-        </div>
+        <MantenanceLayout 
+            title="Mantenimiento de Eventos"
+            messages={messages}
+            headers={headers}
+            data={eventoData}
+            client:load
+            client:only
+        />
     </main>
 </Layout>
 
@@ -31,4 +77,3 @@ import EventInput from "../../components/event/index.jsx";
         overflow-y: auto;
     }
 </style>
-../../components/event/index.jsx
