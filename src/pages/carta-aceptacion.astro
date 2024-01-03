@@ -2,21 +2,26 @@
 import Layout from '@/layouts/Layout.astro';
 
 
-import App from "@/components/ISA/carta-aceptacion/index";
+import { nisa } from "@/config/config";
 
 ---
 
 <Layout title='20th Aniversario' >
     <main>
-        <div>
-         
+        <div class="mx-4 py-6  sm:py-8 lg:py-12 flex items-center justify-center max-w-screen-lg ">
+			<div class=" flex flex-col gap-8 md:px-8 md:items-center md:justify-center shadow-lg 
+				border border-gray-200 dark:border-gray-800 rounded-lg bg-white dark:bg-gray-800 px-4 py-8
+			">
+			<h2 class="text-3xl font-bold text-gray-800 lg:text-4xl dark:text-white w-full text-center">
+				Carta de Aceptación
+			</h2>
+				<img
+				src={nisa.carta}
+				alt="ISA Image"
+				class="w-full max-w-2xl rounded-2xl shadow-lg"
+			/>
+            </div>
         </div>
-
-
-
- <div >
-    <App client:load/>
- </div>
  
 
 

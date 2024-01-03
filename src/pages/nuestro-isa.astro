@@ -2,21 +2,66 @@
 import Layout from '@/layouts/Layout.astro';
 
 
-import App from "@/components/ISA/nuestroisa/index";
-
+import nisa from "@/assets/img/universidad-isa-1.jpg";
 ---
 
 <Layout title='20th Aniversario' >
     <main>
-        <div>
-         
+
+
+
+		<div class=" mx-4 py-6  sm:py-8 lg:py-12 flex items-center justify-center max-w-screen-lg ">
+			<div class="h-full flex flex-col gap-8 md:px-8 md:items-center md:justify-center shadow-lg 
+				border border-gray-200 dark:border-gray-800 rounded-lg bg-white dark:bg-gray-800 px-4 py-8
+			">
+                <div class=" flex text-center items-center justify-center gap-8">
+                    <h2 class="text-3xl font-bold text-gray-800 lg:text-4xl dark:text-white">
+						NUESTRO ISA
+					</h2>
+                </div>
+                <div class="grid grid-cols-1 gap-6 xl:gap-8">
+                    <p class="text-sm text-gray-800 lg:text-base dark:text-white">
+                        El Instituto Superior de Agricultura (ISA),
+                        originalmente un centro de educación vocacional
+                        agrícola, fue creado en virtud a un acuerdo entre la
+                        Asociación para el Desarrollo Inc., el Estado Dominicano
+                        y la Misión en el país de la AID. Su inauguración se
+                        realizó el 26 de Enero de 1964 y ese mismo día se inició
+                        la docencia.
+                    </p>
+                    <p class="text-sm text-gray-800 lg:text-base dark:text-white">
+                        El ISA cuenta con miles de tareas de terrenos,
+                        incluyendo su campus y otras instalaciones. Además,
+                        cuenta con más de 30 Edificios, Dormitorios, Cafetería,
+                        Laboratorios, Planta de Procesamiento de Alimentos,
+                        Gallineros, entre otros. Originalmente su plan de
+                        estudios era de 3 años, pero en 1968 en cooperación con
+                        la Pontificia Universidad Católica Madre y Maestra
+                        (PUCMM), el ISA inicia un programa de educación superior
+                        en agricultura.
+                    </p>
+                    <p class="text-sm text-gray-800 lg:text-base dark:text-white">
+                        En 1986, como resultado del trabajo constante del
+                        instituto en el desarrollo de una infraestructura física
+                        adecuada, la excelente calidad de su cuerpo docente, de
+                        su historial de investigación y dada la alta calidad
+                        profesional de sus egresados, el gobierno dominicano le
+                        otorgó a ISA la categoría de Universidad. El desarrollo
+                        de las actividades de la Universidad ISA durante las
+                        últimas cinco décadas, ha respondido claramente a las
+                        necesidades de tecnificación e industrialización de los
+                        sectores productivos de la agropecuaria nacional.
+                    </p>
+                    <div class="mx-auto mb-5">
+                        <img
+                            src={nisa.src}
+                            alt="ISA Image"
+                            class="w-full max-w-xl rounded-2xl shadow-lg"
+                        />
+                    </div>
+                </div>
+            </div>
         </div>
-
-
-
- <div >
-    <App client:load/>
- </div>
  
 
 

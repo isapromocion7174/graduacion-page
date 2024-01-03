@@ -36,11 +36,11 @@ export const navbarOptions: NavbarOption[] = [
             },
             {
                 name: "Un dia tipico en ISA",
-                path: "/nisa/dia-tipico",
+                path: "/dia-tipico",
             },
             {
                 name: "Deportivas",
-                path: "/nisa/deportivas",
+                path: "/deportivas",
             },
             {
                 name: "Resumen de vidas",
@@ -74,7 +74,7 @@ export const navbarOptions: NavbarOption[] = [
                 name: "Programas de Graduacion",
                 path: "/programas-graduacion",
             },
-            
+
             {
                 name: "Otros",
                 path: "/otros",
