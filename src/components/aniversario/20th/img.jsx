@@ -1,10 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Overlay from "@/components/aniversario/modal/modal";
-<<<<<<< HEAD
-import { navbarOptions20th } from "@/config/configaniversario/20thaniversario/20thconfig";
-=======
 import { th20Config } from "@/config/configaniversario/20thaniversario/20thconfig";
->>>>>>> 115f71f898eb88cc37e02d451873e81bb190f777
 
 const App = () => {
     const [selectedImage, setSelectedImage] = useState("");
