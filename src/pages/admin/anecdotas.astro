@@ -1,10 +1,46 @@
 ---
 import Layout from "@/layouts/Layout.astro";
+
+const headers = [
+	{ name: "ID", key: 'id'},
+    { name: "Titulo", key: 'titulo'},
+	{ name: "Usuario", key: 'usuario'}
+]
+
+import MantenanceLayout from '@/components/Mantenances/Anecdotas/MantenanceLayout'
+
+const messages = {
+    delete: "¿Está seguro que desea eliminar esta anecdota?",
+    pending: "Eliminando anecdota...",
+    success: "Anecdota eliminado correctamente",
+    error: "Error al eliminar la anecdota"
+}
+
+import { getAnecdotas, deleteAnecdota} from '@/api/anectodas';
+
+const anecdotas = await getAnecdotas();
+
+console.log(anecdotas);
+
+const anecdotaData = anecdotas.map((anecdota) => {
+    return {
+        id: anecdota._id,
+		titulo: anecdota.titulo,
+        usuario: anecdota.usuario.nombres + ' ' + anecdota.usuario.apellidos,
+    }
+})
 ---
 
 <Layout title="admin - Anecdotas">
     <main>
-        <h1>Anecdotas</h1>
+			<MantenanceLayout 
+				title="Mantenimiento de Anecdotas"
+				headers={headers}
+				data={anecdotaData}
+				messages={messages}
+				client:load
+				client:only
+			/>
     </main>
 </Layout>
 

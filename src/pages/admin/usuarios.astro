@@ -2,13 +2,13 @@
 import Layout from '../../layouts/Layout.astro';
 import Userinput  from "@/components/user/index";
 import MantenanceLayout from '@/components/user/MantenanceLayout'
-import { deleteUser } from "@/api/users";
 const headers = [
     { name: "IMG", key: 'img_url'},
     { name: 'Nombres', key: 'nombres' },
     { name: 'Apellidos', key: 'apellidos' },
     { name: 'Email', key: 'correo' },
-    { name: 'Rol', key: 'rol' }
+    { name: 'Rol', key: 'rol' },
+    { name: 'Sexo', key: 'sexo' },
 ]
 
 const messages = {
@@ -32,6 +32,7 @@ const usersData = users.map((user) => {
         apellidos: user.apellidos,
         correo: user.correo,
         rol: user.rol.nombre,
+        sexo: user.sexo
     }
 })
 
@@ -44,7 +45,6 @@ const usersData = users.map((user) => {
             title="Mantenimiento de Usuario"
             headers={headers}
             data={usersData}
-            deleteObject={deleteUser}
             messages={messages}
             client:load
             />

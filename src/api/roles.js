@@ -2,7 +2,7 @@ import { API_URL } from "@/config/config";
 
 export const getRoles = async () => {
     try {
-        const response = await fetch(`http://localhost:3000/role/`);
+        const response = await fetch(`${API_URL}/role/`);
         const data = await response.json();
         return data;
     } catch (error) {

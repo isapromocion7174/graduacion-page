@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Table from "@/components/table/index.jsx";
 import { FaPlus } from "react-icons/fa6";
-import Userinput from "@/components/user/index";
-import { deleteUser } from "@/api/users";
+import Anecdotasinput from "@/components/Mantenances/Anecdotas/Inputs";
+import { deleteAnecdota } from "@/api/anectodas";
 const MantenanceLayout = ({ title, headers, data, messages }) => {
     const [id, setId] = useState(null);
     return (
@@ -19,7 +19,7 @@ const MantenanceLayout = ({ title, headers, data, messages }) => {
             <Table
                 headers={headers}
                 data={data}
-                deleteObject={deleteUser}
+                deleteObject={deleteAnecdota}
                 messages={messages}
                 setId={setId}
             />
@@ -43,7 +43,7 @@ const MantenanceLayout = ({ title, headers, data, messages }) => {
                     >
                         <span aria-hidden="true">&times;</span>
                     </button>
-                    <Userinput id={id} />
+                    <Anecdotasinput id={id} />
                 </div>
             </dialog>
 
