@@ -52,8 +52,6 @@ const UserForm = ({ id = false }) => {
                 success: "Usuario creado",
                 error: "Error al crear usuario",
             });
-
-            console.log(userCreated);
         }
 
         e.target.reset();

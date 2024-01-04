@@ -19,15 +19,13 @@ const Form = () => {
         const form = new FormData(e.target);
         const data = Object.fromEntries(form);
         const { email, password } = data;
-        console.log(data);
+
         try {
             const result = await login(email, password);
             const { token } = result;
             setToken(token);
             localStorage.setItem("x-token", token);
-        } catch (e) {
-            console.log(e);
-        }
+        } catch (e) {}
     };
     return (
         <form

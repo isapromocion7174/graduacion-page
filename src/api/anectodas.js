@@ -39,7 +39,6 @@ export const updateAnecdota = async (id, body, token) => {
 };
 
 export const deleteAnecdota = async (id, token) => {
-    console.log(id);
     const response = await fetch(`${API_URL}/anecdota/${id}`, {
         method: "DELETE",
         headers: {

@@ -60,7 +60,6 @@ export const getUserByToken = async (token) => {
         const data = await response.json();
         return data;
     } catch (error) {
-        console.log(error);
         return null;
     }
 };

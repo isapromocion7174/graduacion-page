@@ -43,7 +43,7 @@ const AnectodasForm = ({ id = false }) => {
 
         const data = Object.fromEntries(form.entries());
         data.descripcion = quillValue;
-        console.log(data);
+
         document.querySelector("dialog").close();
         if (id) {
             const userUpdated = await toast.promise(
@@ -54,7 +54,6 @@ const AnectodasForm = ({ id = false }) => {
                     error: "Error al actualizar Anecdota",
                 }
             );
-            console.log(userUpdated);
         } else {
             const userCreated = await toast.promise(
                 createAnecdota(data, token),
@@ -64,7 +63,6 @@ const AnectodasForm = ({ id = false }) => {
                     error: "Error al crear Anecdota",
                 }
             );
-            console.log(userCreated);
         }
 
         e.target.reset();

@@ -12,7 +12,7 @@ const VerifyLogin = () => {
     useEffect(() => {
         if (!token) {
             const tokenStorage = localStorage.getItem("x-token");
-            console.log(tokenStorage);
+
             if (!tokenStorage) return;
 
             setToken(tokenStorage);
@@ -27,17 +27,12 @@ const VerifyLogin = () => {
                 const user = await getUserByToken(token);
                 if (!user) return;
                 setUser(user);
-                console.log(user);
-            } catch (e) {
-                console.log(e);
-            }
+            } catch (e) {}
         };
         fetchUser();
     }, [token]);
 
-    useEffect(() => {
-        console.log(user);
-    }, [user]);
+    useEffect(() => {}, [user]);
 
     return <></>;
 };

@@ -35,7 +35,7 @@ const EventForm = ({ id = false }) => {
         const form = new FormData(e.target);
 
         const data = Object.fromEntries(form.entries());
-        console.log(data);
+
         document.querySelector("dialog").close();
         if (id) {
             const userUpdated = await toast.promise(
@@ -46,14 +46,12 @@ const EventForm = ({ id = false }) => {
                     error: "Error al actualizar Evento",
                 }
             );
-            console.log(userUpdated);
         } else {
             const userCreated = await toast.promise(createEvento(form, token), {
                 pending: "Creando Evento...",
                 success: "Anecdota creada",
                 error: "Error al crear Anecdota",
             });
-            console.log(userCreated);
         }
 
         e.target.reset();

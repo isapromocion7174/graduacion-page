@@ -4,11 +4,11 @@ import { getUsers } from "@/api/users";
 
 const UsersSelect = ({ id }) => {
     const [users, setUsers] = useState(null);
-    console.log(id);
+
     useEffect(() => {
         const fetchRoles = async () => {
             const usersFetch = await getUsers();
-            console.log(usersFetch);
+
             setUsers(
                 usersFetch.map((user) => {
                     return {

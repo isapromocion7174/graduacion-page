@@ -39,11 +39,10 @@ const index = ({ headers, data, deleteObject, messages, setId }) => {
         e.preventDefault();
         const form = new FormData(e.target);
         const info = Object.fromEntries(form.entries());
-        console.log(info);
+
         const filter = info.filter.toLowerCase();
         if (!filter) return setFilter(data);
         const filterData = data.filter((row) => {
-            console.log(row);
             return Object.keys(row).some((key) =>
                 row[key]?.toString()?.toLowerCase()?.includes(filter)
             );

@@ -3,11 +3,11 @@ import { getRoles } from "@/api/roles";
 
 const role = ({ id }) => {
     const [roles, setRoles] = useState(null);
-    console.log(id);
+
     useEffect(() => {
         const fetchRoles = async () => {
             const roles = await getRoles();
-            console.log(roles);
+
             setRoles(roles);
         };
         fetchRoles();

@@ -12,8 +12,6 @@ interface Props {
 import React from "react";
 
 const Select = ({ selected, objects, title, name }: Props) => {
-    console.log(objects);
-    console.log(selected);
     return (
         <div>
             <label

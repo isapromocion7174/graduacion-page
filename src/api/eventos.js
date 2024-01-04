@@ -37,7 +37,6 @@ export const updateEvento = async (id, form, token) => {
 };
 
 export const deleteEvento = async (id, token) => {
-    console.log(id);
     const response = await fetch(`${API_URL}/event/${id}`, {
         method: "DELETE",
         headers: {

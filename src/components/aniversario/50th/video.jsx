@@ -19,7 +19,6 @@ const Img = () => {
         let timeout;
 
         const handleMouseMove = () => {
-            console.log("Mouse moved!");
             setIsMouseMoving(true);
 
             clearTimeout(timeout);
