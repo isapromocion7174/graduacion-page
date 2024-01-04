@@ -11,7 +11,7 @@ const ADMIN_ROLE = import.meta.env.PUBLIC_ADMIN_ROLE;
 const LogoDarkMode = (props) => {
     return (
         <img
-            src="https://res.cloudinary.com/di1hmzv5y/image/upload/v1703890101/TakeThis_te0wjp.png"
+            src="https://res.cloudinary.com/di1hmzv5y/image/upload/w_1000/q_auto/f_auto/v1703890101/TakeThis_te0wjp.png"
             alt="ISA LOGO"
             {...props}
         />
@@ -21,7 +21,7 @@ const LogoDarkMode = (props) => {
 const LogoLightMode = (props) => {
     return (
         <img
-            src="https://res.cloudinary.com/di1hmzv5y/image/upload/v1703888573/Instituto-Superior-de-Agricultura-ISA-removebg-preview_d7xypv.png"
+            src="https://res.cloudinary.com/di1hmzv5y/image/upload/w_1000/q_auto/f_auto/v1703888573/Instituto-Superior-de-Agricultura-ISA-removebg-preview_d7xypv.png"
             alt="ISA LOGO"
             {...props}
         />
