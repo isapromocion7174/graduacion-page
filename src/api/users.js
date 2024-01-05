@@ -94,8 +94,7 @@ export const login = async (correo, password) => {
             body: JSON.stringify(obj),
         });
         const data = await response.json();
-
-        if (data.mensaje) {
+        if (data?.mensaje) {
             throw new Error(data.mensaje);
         }
         return data;

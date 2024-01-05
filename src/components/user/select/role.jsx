@@ -13,7 +13,7 @@ const role = ({ id }) => {
         fetchRoles();
     }, []);
     return (
-        <div>
+        <div className="hidden">
             <label
                 htmlFor="rol"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"

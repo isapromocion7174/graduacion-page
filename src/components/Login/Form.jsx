@@ -22,6 +22,7 @@ const Form = () => {
         const { email, password } = data;
 
         const result = await login(email, password);
+        console.log(result);
         if (result.error) return toast.error("Error al iniciar sesion");
 
         const { token } = result;
