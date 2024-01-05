@@ -5,7 +5,11 @@ import MantenanceLayout from '@/components/event/MantenanceLayout'
 
 import { getEventos} from '@/api/eventos';
 
-const eventos = await getEventos();
+let eventos = await getEventos();
+if(eventos.error){
+    eventos = [];
+}
+
 
 
 const messages = {

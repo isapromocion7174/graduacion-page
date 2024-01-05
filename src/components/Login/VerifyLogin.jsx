@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useUserStore } from "@/stores/userStore";
 import { getUserByToken } from "@/api/users";
+import { toast } from "react-toastify";
 
 const VerifyLogin = () => {
     const token = useUserStore((state) => state.token);
@@ -25,9 +26,12 @@ const VerifyLogin = () => {
         const fetchUser = async () => {
             try {
                 const user = await getUserByToken(token);
+                if (user.error) return toast.error("Error al obtener usuario");
                 if (!user) return;
                 setUser(user);
-            } catch (e) {}
+            } catch (e) {
+                toast.error("Error al obtener usuario");
+            }
         };
         fetchUser();
     }, [token]);

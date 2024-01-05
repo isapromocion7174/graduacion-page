@@ -4,8 +4,13 @@ import Layout from "@/layouts/Layout.astro";
 import { getAnecdotas } from '@/api/anectodas';
 
 import CardText from '@/components/CardText/CardText'
+import {toast} from 'react-toastify';
+let anecdotas = await getAnecdotas();
+if(anecdotas.error){
+    anecdotas = [];
+}
 
-const anecdotas = await getAnecdotas();
+
 
 ---
 

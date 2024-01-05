@@ -28,7 +28,7 @@ const formatHora = (date) => {
 
 ---
 
-<Layout title={`Evento - ${evento.nombreEvento} - ${evento.lugar}`}>
+<Layout title={`Evento - ${evento?.nombreEvento} - ${evento?.lugar}`}>
     <main class="pb-14 pt-14">
         <div class="flex flex-col items-center justify-center gap-12 p-10 border-2 border-gray-200 dark:border-gray-700 rounded-lg shadow-lg bg-gray-50 dark:bg-gray-800 max-w-screen-md mx-6">
            
@@ -36,7 +36,7 @@ const formatHora = (date) => {
                 class="md:text-4xl font-bold text-center text-gray-900 dark:text-gray-100
                     text-2xl o
                 "
-            >{evento.nombreEvento}</h1>
+            >{evento?.nombreEvento}</h1>
             <img
             class="w-full shadow-lg object-cover rounded-lg"
             src={evento?.foto?.img_url || UserPlaceHolderImg.src}

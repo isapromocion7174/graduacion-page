@@ -3,9 +3,12 @@ import Layout from "@/layouts/Layout.astro";
 import Card from '@/components/Card.astro'
 import CardContainer from "@/components/CardContainer.astro";
 import {getEventos} from '@/api/eventos';
+import { toast } from 'react-toastify';
 
-const eventos = await getEventos();
-
+let eventos = await getEventos();
+if(eventos.error){
+    eventos = [];
+}
 
 
 const formatDate = (date) => {

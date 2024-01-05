@@ -10,7 +10,11 @@ import MantenanceLayout from '@/components/Mantenances/Anecdotas/MantenanceLayou
 
 import { getAnecdotas} from '@/api/anectodas';
 
-const anecdotas = await getAnecdotas();
+let anecdotas = await getAnecdotas();
+if(anecdotas.error){
+    anecdotas = [];
+}
+
 
 const messages = {
     delete: "¿Está seguro que desea eliminar esta anecdota?",

@@ -13,7 +13,10 @@ const messages = {
 
 import { getUsers } from '@/api/users';
 
-const users = await getUsers();
+let users = await getUsers();
+if(users.error){
+    users = [];
+}
 
 
 

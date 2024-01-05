@@ -3,8 +3,13 @@ import Layout from "@/layouts/Layout.astro";
 import Card from "@/components/Card.astro";
 import CardContainer from "@/components/CardContainer.astro";
 import {getUsers} from '@/api/users.js';
+import {toast} from 'react-toastify';
 
-const users = await getUsers();
+let users = await getUsers();
+if(users.error){
+    users = [];
+}
+
 
 
 ---

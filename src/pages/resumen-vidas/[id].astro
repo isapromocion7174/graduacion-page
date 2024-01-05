@@ -5,19 +5,39 @@ import UserPlaceHolderImg from "@/assets/img/userPlaceHolder.jpg";
 const { id } = Astro.params;
 
 import Layout from "@/layouts/Layout.astro";
+let user = {};
+try{
+    user = await getUser(id);
 
-const user = await getUser(id);
-user.edad = Math.floor(
-    (new Date() - new Date(user.fechaNacimiento).getTime()) / 3.15576e10
-);
-user.fechaNacimiento = new Date(user.fechaNacimiento).toLocaleDateString(
-    "es-ES",
-    { year: "numeric", month: "long", day: "numeric" }
-);
+    user.edad = Math.floor(
+        (new Date() - new Date(user.fechaNacimiento).getTime()) / 3.15576e10
+    );
+    user.fechaNacimiento = new Date(user.fechaNacimiento).toLocaleDateString(
+        "es-ES",
+        { year: "numeric", month: "long", day: "numeric" }
+    );
+}
+catch(e){
+    user = {
+        nombres: "Sin registrar",
+        apellidos: "Sin registrar",
+        correo: "Sin registrar",
+        edad: "Sin registrar",
+        ultimoGradoEstudio: "Sin registrar",
+        fechaNacimiento: "Sin registrar",
+        sexo: "Sin registrar",
+        cantidadHijos: "Sin registrar",
+        telefonoCasa: "Sin registrar",
+        telefonoCelular: "Sin registrar",
+        direccion: "Sin registrar",
+        estadoCivil: "Sin registrar",
+        descripcion: "Sin registrar",
+    };
+}
 
 ---
 
-<Layout title={`Resumen de ${user.nombres} ${user.apellidos}`}>
+<Layout title={`Resumen de ${user?.nombres} ${user?.apellidos}`}>
     <main class="pb-14 pt-14">
         <div class="flex flex-col items-center justify-center gap-12 md:gap-24 p-10 border-2 border-gray-200 dark:border-gray-700 rounded-lg shadow-lg bg-gray-50 dark:bg-gray-800 max-w-screen-md mx-6">
             <img

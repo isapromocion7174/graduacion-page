@@ -2,6 +2,7 @@ import React from "react";
 import { login } from "@/api/users";
 import { useEffect } from "react";
 import { useUserStore } from "@/stores/userStore";
+import { toast } from "react-toastify";
 
 const Form = () => {
     const token = useUserStore((state) => state.token);
@@ -20,12 +21,12 @@ const Form = () => {
         const data = Object.fromEntries(form);
         const { email, password } = data;
 
-        try {
-            const result = await login(email, password);
-            const { token } = result;
-            setToken(token);
-            localStorage.setItem("x-token", token);
-        } catch (e) {}
+        const result = await login(email, password);
+        if (result.error) return toast.error("Error al iniciar sesion");
+
+        const { token } = result;
+        setToken(token);
+        localStorage.setItem("x-token", token);
     };
     return (
         <form
