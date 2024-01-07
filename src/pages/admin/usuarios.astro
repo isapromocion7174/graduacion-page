@@ -1,6 +1,5 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import Userinput  from "@/components/user/index";
 import MantenanceLayout from '@/components/user/MantenanceLayout'
 
 
@@ -14,6 +13,7 @@ const messages = {
 import { getUsers } from '@/api/users';
 
 let users = await getUsers();
+console.log(users);
 if(users.error){
     users = [];
 }
@@ -26,7 +26,7 @@ const headers = [
     { name: 'Nombres', key: 'nombres' },
     { name: 'Apellidos', key: 'apellidos' },
     { name: 'Email', key: 'correo' },
-    { name: 'Rol', key: 'rol' },
+    { name: 'Telefono', key: 'telefono' },
     { name: 'Sexo', key: 'sexo' },
 ]
 
@@ -38,8 +38,8 @@ const usersData = users.map((user) => {
         nombres: user.nombres,
         apellidos: user.apellidos,
         correo: user.correo,
-        rol: user.rol.nombre,
-        sexo: user.sexo
+        telefono: user.telefonoCelular || user.telefonoCasa || 'No especificado',
+        sexo: user.sexo || 'No especificado',
     }
 })
 
