@@ -167,3 +167,6 @@ export const nisa = {
 
 export const API_URL =
     import.meta.env.PUBLIC_API_URL || "http://localhost:3000";
+
+
+export const URL_FRONTEND = import.meta.env.URL_FRONTEND || "http://localhost:4321";
