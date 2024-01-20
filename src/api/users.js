@@ -3,24 +3,16 @@ import { API_URL, URL_FRONTEND } from "@/config/config";
 
 export const getUsers = async (query) => {
     try {
-        /* const response = await fetch(`${API_URL}/user`, {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(query),
-        }); */
-
-        /* const response = await fetch(`/api/users`, {
+        const response = await fetch(`${API_URL}/user`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify(query),
         });
-        const data = await response.json(); */
 
-        const response = await fetch(`${URL_FRONTEND}/api/users.json`);
+/* 
+        const response = await fetch(`${URL_FRONTEND}/api/users.json`); */
         const data = await response.json();
         return data;
     } catch (error) {
@@ -30,7 +22,7 @@ export const getUsers = async (query) => {
 
 export const getUser = async (id) => {
     try {
-        const response = await fetch(`${URL_FRONTEND}/api/users/${id}`, {
+        const response = await fetch(`${API_URL}/user/${id}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
