@@ -2,7 +2,7 @@ import { API_URL } from "@/config/config";
 
 export const getAnecdotas = async () => {
     try {
-        const response = await fetch(`${API_URL}/anecdota`);
+        const response = await fetch(`http://localhost:4321/api/anecdotas.json`);
         const data = await response.json();
         return data;
     } catch (error) {
@@ -12,7 +12,7 @@ export const getAnecdotas = async () => {
 
 export const getAnecdota = async (id) => {
     try {
-        const response = await fetch(`${API_URL}/anecdota/${id}`);
+        const response = await fetch(`http://localhost:4321/api/anecdotas/${id}`);
         const data = await response.json();
         return data;
     } catch (error) {

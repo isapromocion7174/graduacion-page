@@ -4,6 +4,7 @@ import Userinput from "@/components/user/index";
 import { deleteUser } from "@/api/users";
 const MantenanceLayout = ({ title, headers, data, messages }) => {
     const [id, setId] = useState(null);
+    
     return (
         <>
             <div class="flex flex-col items-center justify-center w-full h-32">

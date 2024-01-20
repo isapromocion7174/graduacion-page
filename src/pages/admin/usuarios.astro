@@ -12,13 +12,10 @@ const messages = {
 
 import { getUsers } from '@/api/users';
 
-let users = await getUsers();
-console.log(users);
+let users: any = await getUsers();
 if(users.error){
     users = [];
 }
-
-
 
 const headers = [
     

@@ -1,14 +1,26 @@
 import { API_URL } from "@/config/config";
 
+
 export const getUsers = async (query) => {
     try {
-        const response = await fetch(`${API_URL}/user`, {
+        /* const response = await fetch(`${API_URL}/user`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(query),
+        }); */
+
+        /* const response = await fetch(`/api/users`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify(query),
         });
+        const data = await response.json(); */
+
+        const response = await fetch('http://localhost:4321/api/users.json');
         const data = await response.json();
         return data;
     } catch (error) {
@@ -16,14 +28,13 @@ export const getUsers = async (query) => {
     }
 };
 
-export const getUser = async (id, query) => {
+export const getUser = async (id) => {
     try {
-        const response = await fetch(`${API_URL}/user/${id}`, {
+        const response = await fetch(`http://localhost:4321/api/users/${id}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
-            },
-            body: JSON.stringify(query),
+            }
         });
         const data = await response.json();
         return data;

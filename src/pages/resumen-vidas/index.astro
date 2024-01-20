@@ -5,7 +5,7 @@ import CardContainer from "@/components/CardContainer.astro";
 import {getUsers} from '@/api/users.js';
 import {toast} from 'react-toastify';
 
-let users = await getUsers();
+let users: any = await getUsers();
 if(users.error){
     users = [];
 }
