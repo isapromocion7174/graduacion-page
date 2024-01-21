@@ -2,7 +2,7 @@
 import Anecdota from "@/models/Anecdota";
 import { connectDB } from '@/lib/mongoose.js'
 export const GET = async () => {
-    const db = await connectDB();
+    await connectDB();
     const anecdotas = await Anecdota.find();
     if (!anecdotas) {
         return new Response(JSON.stringify({

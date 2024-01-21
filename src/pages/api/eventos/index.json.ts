@@ -1,20 +1,19 @@
 
-import User from '@/models/User';
-import Rol from "@/models/Role";
+import Evento from '@/models/Event';
 import { connectDB } from '@/lib/mongoose.js'
 export const GET = async () => {
-    await connectDB();
-    const users = await User.find().populate('rol');
-    if (!users) {
+     await connectDB();
+    const events = await Evento.find();
+    if (!events) {
         return new Response(JSON.stringify({
             error: true,
-            mensaje: 'No se encontraron usuarios'
+            mensaje: 'No se encontraron Eventos'
         }), {
           status: 404,
           statusText: "Not found",
         });
     }
-    return new Response(JSON.stringify(users), {
+    return new Response(JSON.stringify(events), {
         status: 200,
     });
 }

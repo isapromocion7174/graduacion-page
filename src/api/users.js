@@ -1,18 +1,31 @@
 import { API_URL, URL_FRONTEND } from "@/config/config";
 
+import { GET as GETUSERS } from '../pages/api/users/index.json';
+import { GET as GETUSER } from '../pages/api/users/[id]';
+
+
+
 
 export const getUsers = async (query) => {
     try {
-        const response = await fetch(`${API_URL}/user`, {
+        /* const response = await fetch(`${API_URL}/user`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(query),
+        }); */
+
+        /* const response = await fetch(`/api/users`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify(query),
         });
-
-/* 
-        const response = await fetch(`${URL_FRONTEND}/api/users.json`); */
+        const data = await response.json(); */
+        console.log('hola')
+        const response = await GETUSERS();
         const data = await response.json();
         return data;
     } catch (error) {
@@ -22,12 +35,7 @@ export const getUsers = async (query) => {
 
 export const getUser = async (id) => {
     try {
-        const response = await fetch(`${API_URL}/user/${id}`, {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json",
-            }
-        });
+        const response = await GETUSER({params: {id}})
         const data = await response.json();
         return data;
     } catch (error) {

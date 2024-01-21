@@ -4,7 +4,7 @@ import Rol from "@/models/Role";
 import type { APIRoute } from 'astro';
 import { connectDB } from '@/lib/mongoose.js'
 export const GET: APIRoute = async ({params, request}) => {
-    const db = await connectDB();
+    await connectDB();
     const { id } = params;
     const user = await User.findById(id).populate('rol');
     if (!user) {

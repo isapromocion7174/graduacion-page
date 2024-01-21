@@ -1,8 +1,11 @@
 import { API_URL } from "@/config/config";
 
+import { GET as GETS } from '../pages/api/eventos/index.json';
+import { GET as GET } from '../pages/api/eventos/[id]';
+
 export const getEventos = async () => {
     try {
-        const response = await fetch(`${API_URL}/event`);
+        const response = await GETS();
         const data = await response.json();
         return data;
     } catch (error) {
@@ -12,7 +15,7 @@ export const getEventos = async () => {
 
 export const getEvento = async (id) => {
     try {
-        const response = await fetch(`${API_URL}/event/${id}`);
+        const response = await GET({params: {id}});
         const data = await response.json();
         return data;
     } catch (error) {

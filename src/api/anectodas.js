@@ -1,8 +1,10 @@
 import { API_URL } from "@/config/config";
 
+import { GET as GETS } from '../pages/api/anecdotas/index.json';
+import { GET as GET } from '../pages/api/anecdotas/[id]';
 export const getAnecdotas = async () => {
     try {
-        const response = await fetch(`${API_URL}/anecdota`);
+        const response = await GETS();
         const data = await response.json();
         return data;
     } catch (error) {
@@ -12,7 +14,7 @@ export const getAnecdotas = async () => {
 
 export const getAnecdota = async (id) => {
     try {
-        const response = await fetch(`${API_URL}/anecdota/${id}`);
+        const response = await GET({params: {id}});
         const data = await response.json();
         return data;
     } catch (error) {
