@@ -6,7 +6,7 @@ import { GET as GETUSER } from '../pages/api/users/[id]';
 
 
 
-export const getUsers = async (query) => {
+export const getUsers = async (Astro) => {
     try {
         /* const response = await fetch(`${API_URL}/user`, {
             method: "GET",
@@ -25,7 +25,7 @@ export const getUsers = async (query) => {
         });
         const data = await response.json(); */
         console.log('hola')
-        const response = await GETUSERS();
+        const response = await GETUSERS(Astro);
         const data = await response.json();
         return data;
     } catch (error) {
@@ -33,9 +33,9 @@ export const getUsers = async (query) => {
     }
 };
 
-export const getUser = async (id) => {
+export const getUser = async (Astro) => {
     try {
-        const response = await GETUSER({params: {id}})
+        const response = await GETUSER(Astro)
         const data = await response.json();
         return data;
     } catch (error) {

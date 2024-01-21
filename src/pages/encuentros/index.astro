@@ -5,7 +5,7 @@ import CardContainer from "@/components/CardContainer.astro";
 import {getEventos} from '@/api/eventos';
 import { toast } from 'react-toastify';
 
-let eventos = await getEventos();
+let eventos = await getEventos(Astro);
 if(eventos.error){
     eventos = [];
 }

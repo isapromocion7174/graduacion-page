@@ -5,12 +5,12 @@ import UserPlaceHolderImg from "@/assets/img/userPlaceHolder.jpg";
 const { id } = Astro.params;
 
 import Layout from "@/layouts/Layout.astro";
-let user = {};
+let user: any = {};
 try{
-    user = await getUser(id);
+    user = await getUser(Astro);
 
     user.edad = Math.floor(
-        (new Date() - new Date(user.fechaNacimiento).getTime()) / 3.15576e10
+        ((new Date() as any )- new Date(user.fechaNacimiento).getTime()) / 3.15576e10
     );
     user.fechaNacimiento = new Date(user.fechaNacimiento).toLocaleDateString(
         "es-ES",

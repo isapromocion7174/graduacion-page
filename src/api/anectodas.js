@@ -2,9 +2,9 @@ import { API_URL } from "@/config/config";
 
 import { GET as GETS } from '../pages/api/anecdotas/index.json';
 import { GET as GET } from '../pages/api/anecdotas/[id]';
-export const getAnecdotas = async () => {
+export const getAnecdotas = async (Astro) => {
     try {
-        const response = await GETS();
+        const response = await GETS(Astro);
         const data = await response.json();
         return data;
     } catch (error) {
@@ -12,9 +12,9 @@ export const getAnecdotas = async () => {
     }
 };
 
-export const getAnecdota = async (id) => {
+export const getAnecdota = async (Astro) => {
     try {
-        const response = await GET({params: {id}});
+        const response = await GET(Astro);
         const data = await response.json();
         return data;
     } catch (error) {

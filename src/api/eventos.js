@@ -3,9 +3,9 @@ import { API_URL } from "@/config/config";
 import { GET as GETS } from '../pages/api/eventos/index.json';
 import { GET as GET } from '../pages/api/eventos/[id]';
 
-export const getEventos = async () => {
+export const getEventos = async (Astro) => {
     try {
-        const response = await GETS();
+        const response = await GETS(Astro);
         const data = await response.json();
         return data;
     } catch (error) {
@@ -13,9 +13,9 @@ export const getEventos = async () => {
     }
 };
 
-export const getEvento = async (id) => {
+export const getEvento = async (Astro) => {
     try {
-        const response = await GET({params: {id}});
+        const response = await GET(Astro);
         const data = await response.json();
         return data;
     } catch (error) {

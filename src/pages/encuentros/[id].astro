@@ -2,11 +2,9 @@
 import { getEvento } from "@/api/eventos";
 import UserPlaceHolderImg from "@/assets/img/userPlaceHolder.jpg";
 
-const { id } = Astro.params;
-
 import Layout from "@/layouts/Layout.astro";
 
-const evento = await getEvento(id);
+const evento = await getEvento(Astro);
 
 const formatDate = (date) => {
     const d = new Date(date);

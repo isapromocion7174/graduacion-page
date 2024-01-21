@@ -1,8 +1,9 @@
 
 import User from '@/models/User';
+import type { APIRoute } from 'astro';
 import Rol from "@/models/Role";
 import { connectDB } from '@/lib/mongoose.js'
-export const GET = async () => {
+export const GET:APIRoute = async () => {
     await connectDB();
     const users = await User.find().populate('rol');
     if (!users) {
