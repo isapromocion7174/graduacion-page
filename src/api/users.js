@@ -1,31 +1,8 @@
 import { API_URL, URL_FRONTEND } from "@/config/config";
 
-import { GET as GETUSERS } from '../pages/api/users/index.json';
-import { GET as GETUSER } from '../pages/api/users/[id]';
-
-
-
-
-export const getUsers = async (Astro) => {
+export const getUsers = async () => {
     try {
-        /* const response = await fetch(`${API_URL}/user`, {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(query),
-        }); */
-
-        /* const response = await fetch(`/api/users`, {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(query),
-        });
-        const data = await response.json(); */
-        console.log('hola')
-        const response = await GETUSERS(Astro);
+        const response = await fetch(`${API_URL}/user`);
         const data = await response.json();
         return data;
     } catch (error) {
@@ -33,9 +10,9 @@ export const getUsers = async (Astro) => {
     }
 };
 
-export const getUser = async (Astro) => {
+export const getUser = async (id) => {
     try {
-        const response = await GETUSER(Astro)
+        const response = await fetch(`${API_URL}/user/${id}`)
         const data = await response.json();
         return data;
     } catch (error) {

@@ -4,7 +4,8 @@ import UserPlaceHolderImg from "@/assets/img/userPlaceHolder.jpg";
 
 import Layout from "@/layouts/Layout.astro";
 
-const evento = await getEvento(Astro);
+const { id } = Astro.params;
+const evento = await getEvento(id);
 
 const formatDate = (date) => {
     const d = new Date(date);

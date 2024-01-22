@@ -7,7 +7,7 @@ const { id } = Astro.params;
 import Layout from "@/layouts/Layout.astro";
 let user: any = {};
 try{
-    user = await getUser(Astro);
+    user = await getUser(id);
 
     user.edad = Math.floor(
         ((new Date() as any )- new Date(user.fechaNacimiento).getTime()) / 3.15576e10
